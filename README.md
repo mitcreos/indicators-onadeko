@@ -1,3 +1,3 @@
 # indicators-onadeko
 
-testing github connection
+testing connection
