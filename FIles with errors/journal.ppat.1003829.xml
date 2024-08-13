@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article
+  PUBLIC "-//NLM//DTD Journal Publishing DTD v3.0 20080202//EN" "http://dtd.nlm.nih.gov/publishing/3.0/journalpublishing3.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="3.0" xml:lang="en">
+<front>
+<journal-meta>
+<journal-id journal-id-type="nlm-ta">PLoS Pathog</journal-id>
+<journal-id journal-id-type="publisher-id">plos</journal-id>
+<journal-id journal-id-type="pmc">plospath</journal-id><journal-title-group>
+<journal-title>PLoS Pathogens</journal-title></journal-title-group>
+<issn pub-type="ppub">1553-7366</issn>
+<issn pub-type="epub">1553-7374</issn>
+<publisher>
+<publisher-name>Public Library of Science</publisher-name>
+<publisher-loc>San Francisco, USA</publisher-loc></publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">PPATHOGENS-D-13-01099</article-id>
+<article-id pub-id-type="doi">10.1371/journal.ppat.1003829</article-id>
+<article-categories><subj-group subj-group-type="heading"><subject>Research Article</subject></subj-group><subj-group subj-group-type="Discipline-v2"><subject>Medicine</subject><subj-group><subject>Infectious diseases</subject><subj-group><subject>Viral diseases</subject><subj-group><subject>HIV</subject><subj-group><subject>Retrovirology and HIV immunopathogenesis</subject></subj-group></subj-group></subj-group></subj-group></subj-group></article-categories>
+<title-group>
+<article-title>A Compositional Look at the Human Gastrointestinal Microbiome and Immune Activation Parameters in HIV Infected Subjects</article-title>
+<alt-title alt-title-type="running-head">Colonic Microbiome in HIV</alt-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author" xlink:type="simple"><name name-style="western"><surname>Mutlu</surname><given-names>Ece A.</given-names></name><xref ref-type="aff" rid="aff1"><sup>1</sup></xref></contrib>
+<contrib contrib-type="author" xlink:type="simple"><name name-style="western"><surname>Keshavarzian</surname><given-names>Ali</given-names></name><xref ref-type="aff" rid="aff1"><sup>1</sup></xref><xref ref-type="aff" rid="aff2"><sup>2</sup></xref><xref ref-type="aff" rid="aff3"><sup>3</sup></xref><xref ref-type="aff" rid="aff4"><sup>4</sup></xref></contrib>
+<contrib contrib-type="author" xlink:type="simple"><name name-style="western"><surname>Losurdo</surname><given-names>John</given-names></name><xref ref-type="aff" rid="aff1"><sup>1</sup></xref></contrib>
+<contrib contrib-type="author" xlink:type="simple"><name name-style="western"><surname>Swanson</surname><given-names>Garth</given-names></name><xref ref-type="aff" rid="aff1"><sup>1</sup></xref></contrib>
+<contrib contrib-type="author" xlink:type="simple"><name name-style="western"><surname>Siewe</surname><given-names>Basile</given-names></name><xref ref-type="aff" rid="aff5"><sup>5</sup></xref></contrib>
+<contrib contrib-type="author" xlink:type="simple"><name name-style="western"><surname>Forsyth</surname><given-names>Christopher</given-names></name><xref ref-type="aff" rid="aff1"><sup>1</sup></xref><xref ref-type="aff" rid="aff6"><sup>6</sup></xref></contrib>
+<contrib contrib-type="author" xlink:type="simple"><name name-style="western"><surname>French</surname><given-names>Audrey</given-names></name><xref ref-type="aff" rid="aff7"><sup>7</sup></xref></contrib>
+<contrib contrib-type="author" xlink:type="simple"><name name-style="western"><surname>DeMarais</surname><given-names>Patricia</given-names></name><xref ref-type="aff" rid="aff7"><sup>7</sup></xref></contrib>
+<contrib contrib-type="author" xlink:type="simple"><name name-style="western"><surname>Sun</surname><given-names>Yan</given-names></name><xref ref-type="aff" rid="aff8"><sup>8</sup></xref></contrib>
+<contrib contrib-type="author" xlink:type="simple"><name name-style="western"><surname>Koenig</surname><given-names>Lars</given-names></name><xref ref-type="aff" rid="aff8"><sup>8</sup></xref></contrib>
+<contrib contrib-type="author" xlink:type="simple"><name name-style="western"><surname>Cox</surname><given-names>Stephen</given-names></name><xref ref-type="aff" rid="aff8"><sup>8</sup></xref></contrib>
+<contrib contrib-type="author" xlink:type="simple"><name name-style="western"><surname>Engen</surname><given-names>Phillip</given-names></name><xref ref-type="aff" rid="aff1"><sup>1</sup></xref></contrib>
+<contrib contrib-type="author" xlink:type="simple"><name name-style="western"><surname>Chakradeo</surname><given-names>Prachi</given-names></name><xref ref-type="aff" rid="aff1"><sup>1</sup></xref></contrib>
+<contrib contrib-type="author" xlink:type="simple"><name name-style="western"><surname>Abbasi</surname><given-names>Rawan</given-names></name><xref ref-type="aff" rid="aff1"><sup>1</sup></xref></contrib>
+<contrib contrib-type="author" xlink:type="simple"><name name-style="western"><surname>Gorenz</surname><given-names>Annika</given-names></name><xref ref-type="aff" rid="aff1"><sup>1</sup></xref></contrib>
+<contrib contrib-type="author" xlink:type="simple"><name name-style="western"><surname>Burns</surname><given-names>Charles</given-names></name><xref ref-type="aff" rid="aff9"><sup>9</sup></xref></contrib>
+<contrib contrib-type="author" xlink:type="simple"><name name-style="western"><surname>Landay</surname><given-names>Alan</given-names></name><xref ref-type="aff" rid="aff4"><sup>4</sup></xref><xref ref-type="aff" rid="aff5"><sup>5</sup></xref><xref ref-type="corresp" rid="cor1"><sup>*</sup></xref></contrib>
+</contrib-group>
+<aff id="aff1"><label>1</label><addr-line>Division of Gastroenterology, Hepatology and Nutrition, Department of Medicine, Rush University Medical Center, Chicago, Illinois, United States of America</addr-line></aff>
+<aff id="aff2"><label>2</label><addr-line>Department of Pharmacology, The Graduate College, Rush University, Chicago, Illinois, United States of America</addr-line></aff>
+<aff id="aff3"><label>3</label><addr-line>Department of Physiology and Molecular Biophysics, Rush University Medical Center, Chicago, Illinois, United States of America</addr-line></aff>
+<aff id="aff4"><label>4</label><addr-line>Division of Pharmacology, Utrecht Institute for Pharmaceutical Sciences, Faculty of Science, Utrecht University, Utrecht, The Netherlands</addr-line></aff>
+<aff id="aff5"><label>5</label><addr-line>Department of Immunology/Microbiology, Rush University Medical Center, Chicago, Illinois, United States of America</addr-line></aff>
+<aff id="aff6"><label>6</label><addr-line>Department of Biochemistry, The Graduate College, Rush University, Chicago, Illinois, United States of America</addr-line></aff>
+<aff id="aff7"><label>7</label><addr-line>Ruth M. Rothstein CORE Center/Department of Medicine, Rush University Medical Center, Chicago, Illinois, United States of America</addr-line></aff>
+<aff id="aff8"><label>8</label><addr-line>Research and Testing Laboratory, LLC., Lubbock, Texas, United States of America</addr-line></aff>
+<aff id="aff9"><label>9</label><addr-line>Rush Medical College, Armour Academic Center, Chicago, Illinois, United States of America</addr-line></aff>
+<contrib-group>
+<contrib contrib-type="editor" xlink:type="simple"><name name-style="western"><surname>Relman</surname><given-names>David A.</given-names></name>
+<role>Editor</role>
+<xref ref-type="aff" rid="edit1"/></contrib>
+</contrib-group>
+<aff id="edit1"><addr-line>Stanford University, United States of America</addr-line></aff>
+<author-notes>
+<corresp id="cor1">* E-mail: <email xlink:type="simple">alanday@rush.edu</email></corresp>
+<fn fn-type="conflict"><p>The authors have declared that no competing interests exist.</p></fn>
+<fn fn-type="con"><p>Conceived and designed the experiments: EAM AK JL GS BS CF AL. Performed the experiments: BS YS LK SC PE CB PC RA AG AF PD. Analyzed the data: EAM AK LK AF PD PE PC. Contributed reagents/materials/analysis tools: YS LK SC. Wrote the paper: EAM AK AL. Reviewed and/or edited the manuscript: EAM AK JL GS BS CF AL YS LK SC CB PE RA AG AF PD PC.</p></fn>
+</author-notes>
+<pub-date pub-type="collection"><month>2</month><year>2014</year></pub-date>
+<pub-date pub-type="epub"><day>20</day><month>2</month><year>2014</year></pub-date>
+<volume>10</volume>
+<issue>2</issue>
+<elocation-id>e1003829</elocation-id>
+<history>
+<date date-type="received"><day>16</day><month>4</month><year>2013</year></date>
+<date date-type="accepted"><day>28</day><month>10</month><year>2013</year></date>
+</history>
+<permissions>
+<copyright-year>2014</copyright-year>
+<copyright-holder>Mutlu et al</copyright-holder><license xlink:type="simple"><license-p>This is an open-access article distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="http://creativecommons.org/licenses/by/4.0/" xlink:type="simple">Creative Commons Attribution License</ext-link>, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</license-p></license></permissions>
+<abstract>
+<p>HIV progression is characterized by immune activation and microbial translocation. One factor that may be contributing to HIV progression could be a dysbiotic microbiome. We therefore hypothesized that the GI mucosal microbiome is altered in HIV patients and this alteration correlates with immune activation in HIV. 121 specimens were collected from 21 HIV positive and 22 control human subjects during colonoscopy. The composition of the lower gastrointestinal tract mucosal and luminal bacterial microbiome was characterized using 16S rDNA pyrosequencing and was correlated to clinical parameters as well as immune activation and circulating bacterial products in HIV patients on ART. The composition of the HIV microbiome was significantly different than that of controls; it was less diverse in the right colon and terminal ileum, and was characterized by loss of bacterial taxa that are typically considered commensals. In HIV samples, there was a gain of some pathogenic bacterial taxa. This is the first report characterizing the terminal ileal and colonic mucosal microbiome in HIV patients with next generation sequencing. Limitations include use of HIV-infected subjects on HAART therapy.</p>
+</abstract>
+<abstract abstract-type="summary"><title>Author Summary</title>
+<p>Human immunodeficiency virus (HIV) infection related illness progresses despite the control of the virus itself by medications that stop the replication of the virus. This happens because the immune system gets activated. While the causes for such activation of the immune system are not exactly known, immune activation in HIV infection may be occurring as a result of bacteria or their products in the digestive tract. This study looks at the types of bacteria that reside in the lower intestinal tract in patients infected with human immunodeficiency virus, using state of the art sequencing technology, that can simultaneously look at thousands of bacteria. We have found that the bacteria at the end of the small bowel (an area also called the terminal ileum), at the right and left sides of the large intestine and in the stool is different in patients infected with the human immunodeficiency virus. HIV patients harbor more bacteria that have been linked to other human diseases and have been previously described as harmful. This finding is new and could open up a new frontier of study that could now pave the way to gain a deeper understanding of how the HIV causes illness.</p>
+</abstract>
+<funding-group><funding-statement>This research was supported by the Chicago Developmental Center for AIDS Research (D-CFAR), an NIH funded program (P30 AI 082151), which is supported by the following NIH Institutes and Centers: NIAID, NCI, NIMH, NIDA, NICHD, NHLBI, and NCCAM. The funders had no role in study design, data collection and analysis, decision to publish, or preparation of the manuscript.</funding-statement></funding-group><counts><page-count count="18"/></counts></article-meta>
+</front>
+<body><sec id="s1">
+<title>Introduction</title>
+<p>Human immunodeficiency virus (HIV) infection is a chronic illness characterized by progressive CD4+ T cell loss. With the advent of highly active anti-retroviral therapy (HAART), HIV infection is controlled, resulting in reduced death from opportunistic infections. However, despite successful viral suppression, many HIV patients have persistent inflammation/immune activation resulting in the development of non-HIV comorbidities including cardiovascular disease, osteoporosis, neurocognitive decline, cancer, as well as increased mortality <xref ref-type="bibr" rid="ppat.1003829-Sandler1">[1]</xref>, <xref ref-type="bibr" rid="ppat.1003829-Ostrowski1">[2]</xref>.</p>
+<p>The mechanism of persistent inflammation and immune activation in HIV patients whose viral loads are successfully suppressed by HAART is not fully understood. However, several studies suggest that immune activation could be a consequence of gut-triggered systemic inflammation and microbial translocation <xref ref-type="bibr" rid="ppat.1003829-Klatt1">[3]</xref>: This is not surprising because one of the earliest and principal sites of inflammation/immune activation and resultant CD4+ T cell infection by HIV is the gastrointestinal (GI) tract <xref ref-type="bibr" rid="ppat.1003829-Brenchley1">[4]</xref>. In fact, the GI tract houses the largest mucosal immune system in the body, and is a major interface between immune cells and the environment, with its substantial surface area. It also contains a significant amount of microbial mass, collectively referred to as the gastrointestinal microbiome, the majority of which is bacterial and has an estimated metabolic activity comparable to a human liver.</p>
+<p>Little is known about the human GI tract microbiome in disease states including HIV, despite the fact that current evidence points toward a potential central role for the GI tract microbiome in HIV progression. Studies in HIV-infected humans show that bacterial products are increased in the circulation of patients with HIV <xref ref-type="bibr" rid="ppat.1003829-Brenchley2">[5]</xref>, and this can occur even at early stages of HIV infection, before peripheral CD4+ T cell depletion reaches levels that can lead to clinically apparent disease and opportunistic infections <xref ref-type="bibr" rid="ppat.1003829-Gori1">[6]</xref>. Furthermore, polymicrobial bacterial DNA is detected in the circulation even in patients with suppressed viral loads <xref ref-type="bibr" rid="ppat.1003829-Merlini1">[7]</xref>. The source of this increase is thought to be gastrointestinal tract permeability, which in turn is influenced by the composition and the function of the gastrointestinal microbiome, and the microbial- immune cell interactions across the gastrointestinal epithelium.</p>
+<p>Direct evidence of alterations in the composition of the gastrointestinal tract microbiome has also been found for some bacterial taxa: Current data indicate increases in commensals that can be pathogenic such as Pseudomonas in the feces of subjects with HIV infection; and decreases in mostly beneficial commensals such as Lactobacilli and Bifidobacteria <xref ref-type="bibr" rid="ppat.1003829-Gori1">[6]</xref>.Furthermore, prebiotics have been tested in HIV in an effort to alter the microbiome to have a more favorable composition, resulting in reduced CD4+ T cell activation and improvement in NK cell activity <xref ref-type="bibr" rid="ppat.1003829-Gori2">[8]</xref>.</p>
+<p>On the contrary to the human observations, studies on animal models have not supported the presence of an alteration in the bacterial microbiome <xref ref-type="bibr" rid="ppat.1003829-Klatt1">[3]</xref>, <xref ref-type="bibr" rid="ppat.1003829-Handley1">[9]</xref>:In a simian model of HIV with colitis, the composition of the GI tract microbiome was altered with increases in <italic>Campylobacter</italic> due to the colitis resulting from the presence of SIV, however, no specific differences were found attributable to SIV infection itself <xref ref-type="bibr" rid="ppat.1003829-McKenna1">[10]</xref>. Similarly, in a metagenomic study of the fecal virome in SIV-infected macaques, no major differences were noted when the bacterial sequences were examined <xref ref-type="bibr" rid="ppat.1003829-Handley1">[9]</xref>. Possible reasons for this discrepancy in findings in the SIV model and human HIV could be related to the SIV model itself, or to the study of fecal samples to date. It is theoretically plausible that mucosal samples could provide higher relevance to immune activation given the close proximity of the microbiota to the GI tract epithelium and immune cells at the mucosal surface. On the other hand, human studies in HIV inherently carry major limitations by nature of the subjects themselves being on antiretroviral therapy or having additional lifestyle factors that cannot be tightly controlled for. Nevertheless, HIV-infected human studies are expected to provide significant information as to the mechanisms at play in the clinical setting, and are needed to confirm or refute the findings observed in SIV-infected macaques.</p>
+<p>To date, a detailed and comprehensive look at the GI tract microbiome, especially the ileal and colonic mucosal microbiome in relation to the fecal microbiome has not been reported in HIV -infected humans Major advances in next generation sequencing technologies now allow for a comprehensive and rapid evaluation of the GI tract microbiome in humans at a fraction of the effort and cost, compared to the weeks and months required for such a sequencing effort less than a decade ago. The advent of these technologies has brought about rapid characterization of the bacterial microbiome in the GI tract by sequencing of bacterial genes, such as the 16SrDNA that are used in the taxonomical classification of bacteria. Therefore, these technologies represent an opportunity to characterize the HIV associated GI tract microbiome.</p>
+<p>We aimed to study the composition of the gastrointestinal tract mucosal and luminal bacterial microbiome using 16S rDNA sequencing and to correlate the microbiome to clinical parameters as well as immune activation and circulating bacterial products in HIV-infected patients. We hypothesized that the GI mucosal microbiome is altered in HIV-infected patients and such an alteration correlates with immune activation.</p>
+</sec><sec id="s2">
+<title>Results</title>
+<sec id="s2a">
+<title>Description of the data</title>
+<p>We obtained samples from the terminal ileum (TI), the right colon (RC), the left colon (LC) during colonoscopy, as well as fecal samples from the colonic lumen (F). The sample sites are shown in <xref ref-type="table" rid="ppat-1003829-t001">Table 1</xref>. There were no statistically significant differences in terms of age, gender, and race among the HIV and control subjects (<xref ref-type="supplementary-material" rid="ppat.1003829.s018">Table S1</xref>). The mean CD4 count was 425+/−259 among the HIV subjects (<xref ref-type="supplementary-material" rid="ppat.1003829.s019">Table S2</xref>). The viral load was &lt;75 for 17 out of 21 patients; the remaining four subjects had a mean viral load of 1571+/−2059 cps/ml (<xref ref-type="supplementary-material" rid="ppat.1003829.s019">Table S2</xref>). In 18 out of 21 HIV-infected subjects, colonoscopy was performed for colon cancer screening; and the remaining three subjects had constipation (n = 1), minor rectal bleeding (n = 2), and intermittent loose stools (n = 1). 13/21 HIV subjects were MSM; four had confirmed heterosexual acquisition of HIV; and in 4 subjects, the mode of HIV acquisition was not known.</p>
+<table-wrap id="ppat-1003829-t001" position="float"><object-id pub-id-type="doi">10.1371/journal.ppat.1003829.t001</object-id><label>Table 1</label><caption>
+<title>Sample sites and numbers.</title>
+</caption><alternatives><graphic id="ppat-1003829-t001-1" position="float" mimetype="image" xlink:href="info:doi/10.1371/journal.ppat.1003829.t001" xlink:type="simple"/>
+<table><colgroup span="1"><col align="left" span="1"/><col align="center" span="1"/><col align="center" span="1"/></colgroup>
+<thead>
+<tr>
+<td align="left" rowspan="1" colspan="1">Sample Site</td>
+<td align="left" rowspan="1" colspan="1">HIV (n = 56)</td>
+<td align="left" rowspan="1" colspan="1">Controls (n = 65)</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" rowspan="1" colspan="1">Terminal ileum (TI)</td>
+<td align="left" rowspan="1" colspan="1">8</td>
+<td align="left" rowspan="1" colspan="1">9</td>
+</tr>
+<tr>
+<td align="left" rowspan="1" colspan="1">Right colon (RC)</td>
+<td align="left" rowspan="1" colspan="1">16</td>
+<td align="left" rowspan="1" colspan="1">17</td>
+</tr>
+<tr>
+<td align="left" rowspan="1" colspan="1">Left colon (LC)</td>
+<td align="left" rowspan="1" colspan="1">13</td>
+<td align="left" rowspan="1" colspan="1">18</td>
+</tr>
+<tr>
+<td align="left" rowspan="1" colspan="1">Fecal (F)</td>
+<td align="left" rowspan="1" colspan="1">19</td>
+<td align="left" rowspan="1" colspan="1">21</td>
+</tr>
+</tbody>
+</table>
+</alternatives></table-wrap>
+<p>We obtained 1,079,589 raw sequences, and 322,061,108 raw bases with an average of 8849 sequences/sample at an average length of 298 bps/sequence in two separate runs on a 454 instrument, as described in the methods. After quality–filtering (also as described in the methods), 455,452 total sequences and an average of 3733 sequences per sample were available, that were denoised, &gt;250 bp long, de-multiplexed, reverse-primer-truncated and chimera-filtered for the rest of the analysis. The sequences were rarified to the minimum number of high quality sequences in all samples and normalized by total count for the alpha and beta diversity analyses conducted below.</p>
+</sec><sec id="s2b">
+<title>HIV infection is associated with a decrease in microbial diversity in the terminal ileum and the colon</title>
+<p>Sample richness was assessed by operational taxonomic unit (OTU) counts in each individual sample: The number of observed OTUs in the HIV samples was less than that of the control samples (<xref ref-type="fig" rid="ppat-1003829-g001">Figure 1a</xref>). When looked at by sample type, all sample types had less OTUs in the HIV group compared to the healthy controls. The differences between the HIV and controls groups were especially heightened for samples from the ileum and the right colon which showed numerically higher reductions in sample richness (<xref ref-type="fig" rid="ppat-1003829-g002">Figure 2a–d</xref>).</p>
+<fig id="ppat-1003829-g001" position="float"><object-id pub-id-type="doi">10.1371/journal.ppat.1003829.g001</object-id><label>Figure 1</label><caption>
+<title>Diversity indices in HIV samples versus control samples.</title>
+<p>HIV samples have decreased diversity compared to controls. HIV samples are in red; Control samples are in blue. Panels : (a) OTU richness, (b) Chao1 index, (c) Phylogenetic Diversity (PD) Whole Tree metric.</p>
+</caption><graphic mimetype="image" xlink:href="info:doi/10.1371/journal.ppat.1003829.g001" position="float" xlink:type="simple"/></fig><fig id="ppat-1003829-g002" position="float"><object-id pub-id-type="doi">10.1371/journal.ppat.1003829.g002</object-id><label>Figure 2</label><caption>
+<title>Sample diversity assessed by diversity indices in HIV cases versus controls by sample site.</title>
+<p>HIV cases have decreased diversity compared to controls. HIV samples are in red; Control samples are in blue. Diversity indices shown are OTU richness (panels (a–d)), Chao1 index (panels (e–h)), and Phylogenetic Diversity (PD) Whole Tree metric (panels (i–l)). Samples from ileum are shown in panels (a),(e),(i); samples from right colon are shown in panels (b),(f),(j) ; samples from left colon are shown in panels (c),(g),(k); and fecal samples are shown in panels (d),(h),(l).</p>
+</caption><graphic mimetype="image" xlink:href="info:doi/10.1371/journal.ppat.1003829.g002" position="float" xlink:type="simple"/></fig>
+<p>Within sample bacterial diversity was also assessed by both the chao1 and the Phylogenetic Diversity (PD) Whole Tree metric. Both metrics demonstrated reduced overall diversity among the samples from HIV-infected subjects compared to controls (<xref ref-type="fig" rid="ppat-1003829-g001">Figures 1b and 1c</xref>). The differences were also seen for each individual sample type, however samples from the mucosal surface of HIV-infected subjects were more divergent from those of controls, compared to the differences noted between fecal samples from the HIV and the control groups (<xref ref-type="fig" rid="ppat-1003829-g002">Figures 2e–h, and 2i–l</xref>). Collectively, this data points towards a less diverse bacterial population in HIV throughout the TI and the colon as well as the luminal compartment, although the differences in diversity were most noticeable on the mucosal surfaces, and especially the right colon.</p>
+</sec><sec id="s2c">
+<title>The GI tract bacterial microbiome composition is significantly altered in HIV-infected subjects</title>
+<p>In order to examine the global differences in bacterial composition between the HIV-infected subjects and the controls, we calculated distances between each sample using the Bray-Curtis similarity and unweighted Unifrac. We chose these two different measures for the following reason: The Bray-Curtis similarity is based on shared OTU counts between samples <xref ref-type="bibr" rid="ppat.1003829-Bray1">[11]</xref>, whereas the Unifrac involves placing samples on a phylogenetic tree and calculating and summing branch lengths unique to a given sample on the tree <xref ref-type="bibr" rid="ppat.1003829-Lozupone1">[12]</xref>. Consequently, Bray-Curtis similarity gives equal importance to differences in every taxa, whereas in Unifrac, phylogenetically related taxa cause less divergent Unifrac values compared to distant or unrelated taxa which cause larger differences.
+    
+    
+    <list id="list1" list-type="simple"><list-item><label>a</label>
+<p><bold>Differences in overall community composition in HIV-infected subjects vs. controls.</bold> To uncover differences in bacterial community composition between the samples, we performed nonmetric multidimensional scaling (NMDS) of all the samples using the count-based Bray-Curtis similarity at the OTU level. NMDS is a powerful ordination method that can uncover nonlinear relationships between samples and is widely used in ecology. As shown in the results in <xref ref-type="fig" rid="ppat-1003829-g003">Figure 3a</xref>, there was differential grouping of the control samples to the left of the graph, meanwhile samples from HIV-infected subjects were more dispersed than the control samples and were to the right. Hierarchical clustering of the samples with the unweighted pair group method with arithmetic mean (UPGMA) using the Bray-Curtis similarity additionally confirmed that samples from HIV –infected subjects clustered differently than those from controls (<xref ref-type="fig" rid="ppat-1003829-g004">Figure 4</xref>). In order to test whether the visual differences seen with NMDS ordination and the clustering observed by UPGMA are significant, we compared global bacterial composition in the HIV and control groups at the genus level using perMANOVA with the Bray-Curtis similarity in a one-fixed-factor and one-level nested mixed random effects model (i.e. replicates within sample sites within disease presence (i.e. HIV vs. Controls)). We noted that the visual differences between HIV and controls were statistically significant (<xref ref-type="table" rid="ppat-1003829-t002">Table 2</xref>).</p>
+</list-item></list>             <fig id="ppat-1003829-g003" position="float"><object-id pub-id-type="doi">10.1371/journal.ppat.1003829.g003</object-id><label>Figure 3</label><caption>
+<title>Beta diversity measures in HIV versus controls.</title>
+<p>HIV samples appear separated from control samples in beta diversity analyses. HIV samples are in red; Control samples are in blue. Panel (a) shows nonmetric multidimensional scaling (NMDS) of all the samples using the Bray-Curtis similarity at the OTU level. Panel (b) shows principal coordinates analysis of all of the samples using the Unifrac metric at the OTU level. Panels (c–f) show principal coordinates analysis using the Unifrac metric, by sample site. Panels: (c) For samples from ileum; (d) For samples from right colon; (e) For samples from left colon; (f) For fecal samples.</p>
+</caption><graphic mimetype="image" xlink:href="info:doi/10.1371/journal.ppat.1003829.g003" position="float" xlink:type="simple"/></fig>             <fig id="ppat-1003829-g004" position="float"><object-id pub-id-type="doi">10.1371/journal.ppat.1003829.g004</object-id><label>Figure 4</label><caption>
+<title>UPGMA dendogram based on Bray-Curtis similarity.</title>
+<p>Branches related to HIV samples are colored in red. Branches related to control samples are colored in blue. There is significant clustering within the dendogram.</p>
+</caption><graphic mimetype="image" xlink:href="info:doi/10.1371/journal.ppat.1003829.g004" position="float" xlink:type="simple"/></fig>             <table-wrap id="ppat-1003829-t002" position="float"><object-id pub-id-type="doi">10.1371/journal.ppat.1003829.t002</object-id><label>Table 2</label><caption>
+<title>PerMANOVA summary results.</title>
+</caption><alternatives><graphic id="ppat-1003829-t002-2" position="float" mimetype="image" xlink:href="info:doi/10.1371/journal.ppat.1003829.t002" xlink:type="simple"/>
+<table><colgroup span="1"><col align="left" span="1"/><col align="center" span="1"/><col align="center" span="1"/><col align="center" span="1"/><col align="center" span="1"/></colgroup>
+<thead>
+<tr>
+<td align="left" rowspan="1" colspan="1">Site</td>
+<td align="left" rowspan="1" colspan="1">Model</td>
+<td align="left" rowspan="1" colspan="1">Mean F<xref ref-type="table-fn" rid="nt101">*</xref></td>
+<td align="left" rowspan="1" colspan="1">P-value</td>
+<td align="left" rowspan="1" colspan="1">Proportion of subsamplings rejecting the null hypothesis</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" rowspan="1" colspan="1"><bold>All</bold></td>
+<td align="left" rowspan="1" colspan="1">Mixed Nested</td>
+<td align="left" rowspan="1" colspan="1">10.491</td>
+<td align="left" rowspan="1" colspan="1">0.0003</td>
+<td align="left" rowspan="1" colspan="1">100%</td>
+</tr>
+<tr>
+<td align="left" rowspan="1" colspan="1"><bold>Ileum</bold></td>
+<td align="left" rowspan="1" colspan="1">One-way</td>
+<td align="left" rowspan="1" colspan="1">4.007</td>
+<td align="left" rowspan="1" colspan="1">0.0010</td>
+<td align="left" rowspan="1" colspan="1">100%</td>
+</tr>
+<tr>
+<td align="left" rowspan="1" colspan="1"><bold>Right Colon</bold></td>
+<td align="left" rowspan="1" colspan="1">One-way</td>
+<td align="left" rowspan="1" colspan="1">6.319</td>
+<td align="left" rowspan="1" colspan="1">0.0002</td>
+<td align="left" rowspan="1" colspan="1">100%</td>
+</tr>
+<tr>
+<td align="left" rowspan="1" colspan="1"><bold>Left Colon</bold></td>
+<td align="left" rowspan="1" colspan="1">One-way</td>
+<td align="left" rowspan="1" colspan="1">4.086</td>
+<td align="left" rowspan="1" colspan="1">0.0004</td>
+<td align="left" rowspan="1" colspan="1">100%</td>
+</tr>
+<tr>
+<td align="left" rowspan="1" colspan="1"><bold>Fecal</bold></td>
+<td align="left" rowspan="1" colspan="1">One-way</td>
+<td align="left" rowspan="1" colspan="1">3.418</td>
+<td align="left" rowspan="1" colspan="1">0.0018</td>
+<td align="left" rowspan="1" colspan="1">100%</td>
+</tr>
+</tbody>
+</table>
+</alternatives><table-wrap-foot><fn id="nt101"><label/><p>*Mean F reflects the mean result of 1000 observed F values after 1000 subsamplings, each with 4999 randomizations.</p></fn></table-wrap-foot></table-wrap>To uncover relationships based on presence or absence of bacterial groups as well as their phylogenetic relatedness, we performed a principal coordinates analysis of the samples using the phylogenetic-tree-based Unifrac metric. As shown in <xref ref-type="fig" rid="ppat-1003829-g003">Figure 3b</xref>, there was a different and tighter grouping of the control samples to the left of the graph, and HIV samples were again more dispersed and to the right. The overall Unifrac test was also statistically significant indicating clustering within the phylogenetic tree (p = 0.01).
+    
+    
+    <list list-type="simple" continued-from="list1"><list-item><label>b</label>
+<p><bold>Differences in overall community composition in HIV-infected subjects vs. controls by site of sampling.</bold> We then compared samples from HIV-infected subjects and controls at each site (TI, RC, LC, F) using Unifrac based PCO ordination: Separation of samples was seen for each sample type, however the differential dispersion of samples was graphically more apparent for the TI and RC samples, with a few cases overlapping in the LC and F samples (<xref ref-type="fig" rid="ppat-1003829-g003">Figure 3c–f</xref>). In order to assure that the findings we have observed are not an artifact of the sequence rarification and to get an estimate of the robustness of the results to our sequencing effort, we also performed jackknifed estimates of the Unifrac PCO analysis and the results obtained did not alter the conclusions (<xref ref-type="supplementary-material" rid="ppat.1003829.s001">Figure S1</xref>, <xref ref-type="supplementary-material" rid="ppat.1003829.s002">S2</xref>, <xref ref-type="supplementary-material" rid="ppat.1003829.s003">S3</xref>, <xref ref-type="supplementary-material" rid="ppat.1003829.s004">S4</xref>, <xref ref-type="supplementary-material" rid="ppat.1003829.s005">S5</xref>).</p>
+</list-item></list>We then also statistically compared global bacterial composition in the HIV and control groups at each site at the genus level using perMANOVA models. In all sites, differences between HIV and controls were statistically significant (<xref ref-type="table" rid="ppat-1003829-t002">Table 2</xref>).</p>
+    
+    
+<list list-type="simple" continued-from="list1"><list-item><label>c</label>
+<p><bold>Comparison of bacterial OTUs observed in HIV-infected subjects and controls with network analysis.</bold> In order to evaluate bacterial OTUs associated with HIV and controls, we constructed a bipartite network of the bacterial OTUs and the samples, in which OTU-nodes are connected via edges to sample nodes in which their sequences are found. We have chosen the network analysis approach because it easily allows for visualization of thousands of OTUs in limited number of samples and can reveal significant associations. In the network, edge weights are determined by the number of sequences in an OTU; and clustering of the OTUs and samples are determined by a stochastic spring embedded algorithm as implemented in Cytoscape. The sample connections within the network are analyzed statistically with a G test of independence: Sample nodes from HIV-infected subjects and controls are tested to see whether they are more connected to a particular group than expected by chance. The network diagram is shown in <xref ref-type="supplementary-material" rid="ppat.1003829.s006">Figure S6</xref>: In the center of the graph, sample nodes which are colored by HIV (in red) and controls (in blue) reveal significant clustering of the samples to either the right or the left of the graph, respectively for these groups. Some OTU nodes (shown in white) are only connected to HIV samples (in pink lines) while an equally numerous OTU nodes are only connected to the control samples (in lavender lines). OTU nodes that are connected to single samples lie in the periphery of the network, while those OTU nodes that are connected to multiple samples lie in the center of the network. The network statistics are shown in <xref ref-type="supplementary-material" rid="ppat.1003829.s020">Table S3</xref>, and suggest an overall network with little interconnectedness overall, largely owing to the fact that the OTU nodes are only connected through the sample nodes. However, network statistics also indicate when the network is divided into two subnetworks (i.e. HIV network and control network), there are differences: The HIV node subnetwork has less average neighbors, more heterogeneity and less density compared to both the overall and the control node subnetwork. The HIV nodes are also farther apart from each other than the control nodes. These findings are compatible with the heterogeneity and disarray of the microbiome in HIV.</p>
+</list-item></list>
+</sec><sec id="s2d">
+<title>HIV-infection is associated with increases in potentially pathogenic taxa in the GI tract microbiome</title>
+<p>The mean and standard deviations of different bacterial taxa at each taxonomic level in the HIV and control samples are given in <xref ref-type="supplementary-material" rid="ppat.1003829.s021">Tables S4</xref>, <xref ref-type="supplementary-material" rid="ppat.1003829.s022">S5</xref>, <xref ref-type="supplementary-material" rid="ppat.1003829.s023">S6</xref>, <xref ref-type="supplementary-material" rid="ppat.1003829.s024">S7</xref>. Stacked histogram for all samples at a phylogenetic resolution at the family level is given in <xref ref-type="fig" rid="ppat-1003829-g005">Figure 5</xref>. The histogram shows clear visual differences between the abundance of bacterial taxa in then control samples to the right (that have a lot of brown coloring) and HIV samples to the left (that have an increased abundance of Gamma Proteobacteria shown as blue coloring)</p>
+<fig id="ppat-1003829-g005" position="float"><object-id pub-id-type="doi">10.1371/journal.ppat.1003829.g005</object-id><label>Figure 5</label><caption>
+<title>Stacked histogram of bacterial composition in all samples by disease and site, to the family level of taxonomic resolution.</title>
+<p>Each column represents bacterial composition in one single sample (n = 121 for all samples; n = 65 for controls; n = 56 for HIV). Y- axis denotes abundance of bacterial taxa as a percentage within the sample, with each column totaling 100%. X-axis shows samples from healthy subjects to the left of the graph, and samples from HIV subjects to the right of the graph. TI = samples from terminal ileum; RC = samples from right colon; LC = samples from left colon; F = fecal samples. While all identified families are shown on the graph, sample coloring is grouped by phylogeny. Among the colors used, Bacteroidales are shown in brown tones, Bacilli are shown in orange tones, Clostridia are shown in red tones, Alphaproteobacteria are shown in green tones, Betaproteobacteria are shown in yellow tones, Gammaproteobacteria are shown in blue tones. Major differences between control and HIV samples are visually apparent based on difference in coloring of the samples.</p>
+</caption><graphic mimetype="image" xlink:href="info:doi/10.1371/journal.ppat.1003829.g005" position="float" xlink:type="simple"/></fig>
+<p>In order to discover which bacterial groups are driving the differences between the HIV and the control samples, we performed an indicator species analysis at the genus level for the HIV group vs. the control cases, controlled by type of sample. Bacterial taxa that have an indicator value &gt;15 and are significantly different (p&lt;0.05) are shown in <xref ref-type="fig" rid="ppat-1003829-g006">Figures 6</xref>–<xref ref-type="fig" rid="ppat-1003829-g008">8</xref>. The magnitude of the indicator values for each taxa in HIV and controls is shown in <xref ref-type="fig" rid="ppat-1003829-g006">Figure 6</xref>. HIV was associated with a significant increase in Brachyspira, Campylobacter, Catenibacterium, Escherichia and other unclassified Enterobacteriaceae, unclassified Fusobacteriaceae, Mogibacterium, Prevotella, and Ralstonia (<xref ref-type="fig" rid="ppat-1003829-g007">Figure 7</xref>, p&lt;0.05 all). On the other hand, the healthy control group had more Akkermansia, Bacteroides, Blautia, Coprococcus, Dialister, Dorea, Faecalibacterium, Lachnospira, Roseburia, Ruminococcus, Odoribacter, Oscillospira genera, as well as unclassified bacteria from the following families, Barnesiellaceae, Lachnospiraceae, Peptostreptococcaceae, Rikenellaceae, and Ruminococcaceae (<xref ref-type="fig" rid="ppat-1003829-g008">Figure 8</xref>, p&lt;0.05 all).</p>
+<fig id="ppat-1003829-g006" position="float"><object-id pub-id-type="doi">10.1371/journal.ppat.1003829.g006</object-id><label>Figure 6</label><caption>
+<title>Indicator values for bacterial taxa, which are indicative of control or HIV samples.</title>
+<p>Indicator species analysis was performed after rarification and log transformation. Analysis was blocked by site. Genera and those unclassified bacterial members of families that not able to be classified down to a particular genus, that also have indicator values &gt;15 and p&lt;0.05 are shown.</p>
+</caption><graphic mimetype="image" xlink:href="info:doi/10.1371/journal.ppat.1003829.g006" position="float" xlink:type="simple"/></fig><fig id="ppat-1003829-g007" position="float"><object-id pub-id-type="doi">10.1371/journal.ppat.1003829.g007</object-id><label>Figure 7</label><caption>
+<title>Scatterplots of bacterial taxa indicative of HIV samples.</title>
+<p>Y-axis shows percent abundance in rarified sequences for each sample. Control samples are shown as black dots and HIV samples are shown as upward black triangles. Horizontal lines denote mean value in each group. P-values shown are results from indicator species analysis. Genera and those unclassified bacterial members of families that not able to be classified down to a particular genus, that also have indicator values &gt;15 and p&lt;0.05 are shown.</p>
+</caption><graphic mimetype="image" xlink:href="info:doi/10.1371/journal.ppat.1003829.g007" position="float" xlink:type="simple"/></fig><fig id="ppat-1003829-g008" position="float"><object-id pub-id-type="doi">10.1371/journal.ppat.1003829.g008</object-id><label>Figure 8</label><caption>
+<title>Scatterplots of bacterial taxa indicative of control samples.</title>
+<p>Y-axis shows percent abundance in rarified sequences for each sample. Control samples are shown as black dots and HIV samples are shown as upward black triangles. Horizontal lines denote mean value in each group. P-values shown are results from indicator species analysis. Genera and those unclassified bacterial members of families that not able to be classified down to a particular genus, that also have indicator values &gt;15 and p&lt;0.05 are shown.</p>
+</caption><graphic mimetype="image" xlink:href="info:doi/10.1371/journal.ppat.1003829.g008" position="float" xlink:type="simple"/></fig></sec><sec id="s2e">
+<title>Relationship between bacterial taxa in HIV-infected subject samples with serum soluble markers of immune activation</title>
+<p>Soluble markers of immune activation (serum cytokines and microbial translocation markers) were measured from all subjects except five (3 subjects in the HIV-infected and 2 subjects in the control group) in whom samples were not available. We performed a canonical correspondence analysis (CCA) to look for an association between bacterial composition and serum interleukin-6 (IL-6), tumor necrosis factor alpha (TNF), lipoteichoic acid (LTA) and soluble CD14 (sCD14). CCA correlations between the cytokines (IL-6 and TNF) and microbial translocation products (LTA and sCD14) are given in <xref ref-type="supplementary-material" rid="ppat.1003829.s025">Table S8</xref>. The presence of IL-6 and LTA were associated with a continuum of bacterial composition shifts from the healthy state towards HIV (shown along the first axis of the CCA) (<xref ref-type="fig" rid="ppat-1003829-g009">Figure 9</xref>). The impacts of each of the cytokine and microbial translocation markers on the CCA are shown in <xref ref-type="fig" rid="ppat-1003829-g009">Figures 9b–c</xref>. Increasing IL-6 was associated with controls whereas increasing LTA was associated with HIV. However, these cytokine levels failed to explain majority of the global composition changes between HIV and controls (spread across the first CCA axis), considering that the amount of cumulative variation explained was 5% of the total variance in the data. Bacterial composition-cytokine correlations were also not significant using a Monte-Carlo randomization test suggesting a weak association between these cytokines and microbial translocation products and global bacterial composition in the cases.</p>
+<fig id="ppat-1003829-g009" position="float"><object-id pub-id-type="doi">10.1371/journal.ppat.1003829.g009</object-id><label>Figure 9</label><caption>
+<title>Canonical correspondence analysis of genera with measured cytokines.</title>
+<p>HIV samples are shown in red vs. control samples are shown in blue. (a)The eigenvalues for axis 1 and axis 2 are 0.107 and 0.087, respectively. The axes 1 and 2 explain 2.8% and 2.2% of the total variance, respectively. The first canonical axis is statistically significant with p = 0.003 using a randomization test where p = proportion of randomized runs with eigenvalue greater than or equal to the observed eigenvalue with 998 randomizations. The vectors in the mid portion of the graph represent cytokines or microbial translocation products. LTA increases going toward the HIV group, and IL-6 increases going toward the control group. The effect of TNF and sCD14 are minimal along the first axis of separation between the cases. (b) Canonical correspondence analysis of genera with IL-6 effect overlay. The size of the case dots correspond to the impact of IL-6 on the analysis. The regression plot for each axis coordinates and IL-6 is given below the axis for axis 1 and to the left of the axis for axis 2. (c) Canonical correspondence analysis of genera with LTA effect overlay. The size of the case dots correspond to the impact of LTA on the analysis. The regression plot for each axis coordinates and LTA is given below the axis for axis 1 and to the left of the axis for axis 2.</p>
+</caption><graphic mimetype="image" xlink:href="info:doi/10.1371/journal.ppat.1003829.g009" position="float" xlink:type="simple"/></fig>
+<p>In situations when a handful of bacterial taxa may be driving the synthesis of these cytokines, it is certainly plausible that the individual bacterial taxa rather than the total microbial composition may be associated with cytokine levels or microbial translocation products. We tested for this by looking at Spearman's correlations between the individual bacterial taxa that were identified in the indicator species analysis and the cytokines and microbial translocation products in the HIV group. Significant potential associations with bacterial taxa in the HIV group are given in <xref ref-type="table" rid="ppat-1003829-t003">Table 3</xref>. Notably, some of these associations did not appear linear, suggesting a complex interrelationship with bacterial composition and cytokine secretion and microbial translocation products (data not shown).</p>
+<table-wrap id="ppat-1003829-t003" position="float"><object-id pub-id-type="doi">10.1371/journal.ppat.1003829.t003</object-id><label>Table 3</label><caption>
+<title>Statistically significant cytokine and microbial translocation product correlations with individual bacterial taxa in the HIV group.</title>
+</caption><alternatives><graphic id="ppat-1003829-t003-3" position="float" mimetype="image" xlink:href="info:doi/10.1371/journal.ppat.1003829.t003" xlink:type="simple"/>
+<table><colgroup span="1"><col align="left" span="1"/><col align="center" span="1"/><col align="center" span="1"/><col align="center" span="1"/><col align="center" span="1"/><col align="center" span="1"/><col align="center" span="1"/><col align="center" span="1"/><col align="center" span="1"/><col align="center" span="1"/></colgroup>
+<thead>
+<tr>
+<td align="left" rowspan="1" colspan="1">Bacterial Taxa</td>
+<td align="left" rowspan="1" colspan="1"/>
+<td colspan="2" align="left" rowspan="1">IL-6</td>
+<td colspan="2" align="left" rowspan="1">TNF</td>
+<td colspan="2" align="left" rowspan="1">LTA</td>
+<td colspan="2" align="left" rowspan="1">sCD14</td>
+</tr>
+<tr>
+<td align="left" rowspan="1" colspan="1"/>
+<td align="left" rowspan="1" colspan="1">Site</td>
+<td align="left" rowspan="1" colspan="1">Spearman's rho</td>
+<td align="left" rowspan="1" colspan="1"><xref ref-type="table-fn" rid="nt102">*</xref>p-value</td>
+<td align="left" rowspan="1" colspan="1">Spearman's rho</td>
+<td align="left" rowspan="1" colspan="1"><xref ref-type="table-fn" rid="nt102">*</xref>p-value</td>
+<td align="left" rowspan="1" colspan="1">Spearman's rho</td>
+<td align="left" rowspan="1" colspan="1"><xref ref-type="table-fn" rid="nt102">*</xref>p-value</td>
+<td align="left" rowspan="1" colspan="1">Spearman's rho</td>
+<td align="left" rowspan="1" colspan="1"><xref ref-type="table-fn" rid="nt102">*</xref>p-value</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" rowspan="1" colspan="1"><bold>Bacteroides</bold></td>
+<td align="left" rowspan="1" colspan="1">Ileum</td>
+<td align="left" rowspan="1" colspan="1">−0.836</td>
+<td align="left" rowspan="1" colspan="1">0.019</td>
+<td align="left" rowspan="1" colspan="1"/>
+<td align="left" rowspan="1" colspan="1"/>
+<td align="left" rowspan="1" colspan="1"/>
+<td align="left" rowspan="1" colspan="1"/>
+<td align="left" rowspan="1" colspan="1"/>
+<td align="left" rowspan="1" colspan="1"/>
+</tr>
+<tr>
+<td align="left" rowspan="1" colspan="1"/>
+<td align="left" rowspan="1" colspan="1">LC</td>
+<td align="left" rowspan="1" colspan="1"/>
+<td align="left" rowspan="1" colspan="1"/>
+<td align="left" rowspan="1" colspan="1"/>
+<td align="left" rowspan="1" colspan="1"/>
+<td align="left" rowspan="1" colspan="1">0.601</td>
+<td align="left" rowspan="1" colspan="1">0.051</td>
+<td align="left" rowspan="1" colspan="1"/>
+<td align="left" rowspan="1" colspan="1"/>
+</tr>
+<tr>
+<td align="left" rowspan="1" colspan="1"><bold>Blautia</bold></td>
+<td align="left" rowspan="1" colspan="1">Fecal</td>
+<td align="left" rowspan="1" colspan="1"/>
+<td align="left" rowspan="1" colspan="1"/>
+<td align="left" rowspan="1" colspan="1">0.528</td>
+<td align="left" rowspan="1" colspan="1">0.035</td>
+<td align="left" rowspan="1" colspan="1"/>
+<td align="left" rowspan="1" colspan="1"/>
+<td align="left" rowspan="1" colspan="1"/>
+<td align="left" rowspan="1" colspan="1"/>
+</tr>
+<tr>
+<td align="left" rowspan="1" colspan="1"><bold>Unclassified Clostridia</bold></td>
+<td align="left" rowspan="1" colspan="1">RC</td>
+<td align="left" rowspan="1" colspan="1"/>
+<td align="left" rowspan="1" colspan="1"/>
+<td align="left" rowspan="1" colspan="1">0.619</td>
+<td align="left" rowspan="1" colspan="1">0.024</td>
+<td align="left" rowspan="1" colspan="1"/>
+<td align="left" rowspan="1" colspan="1"/>
+<td align="left" rowspan="1" colspan="1"/>
+<td align="left" rowspan="1" colspan="1"/>
+</tr>
+<tr>
+<td align="left" rowspan="1" colspan="1"><bold>Unclassified Lachnospiraceae</bold></td>
+<td align="left" rowspan="1" colspan="1">RC</td>
+<td align="left" rowspan="1" colspan="1"/>
+<td align="left" rowspan="1" colspan="1"/>
+<td align="left" rowspan="1" colspan="1">0.575</td>
+<td align="left" rowspan="1" colspan="1">0.040</td>
+<td align="left" rowspan="1" colspan="1"/>
+<td align="left" rowspan="1" colspan="1"/>
+<td align="left" rowspan="1" colspan="1"/>
+<td align="left" rowspan="1" colspan="1"/>
+</tr>
+<tr>
+<td align="left" rowspan="1" colspan="1"/>
+<td align="left" rowspan="1" colspan="1">Fecal</td>
+<td align="left" rowspan="1" colspan="1"/>
+<td align="left" rowspan="1" colspan="1"/>
+<td align="left" rowspan="1" colspan="1">0.585</td>
+<td align="left" rowspan="1" colspan="1">0.017</td>
+<td align="left" rowspan="1" colspan="1"/>
+<td align="left" rowspan="1" colspan="1"/>
+<td align="left" rowspan="1" colspan="1"/>
+<td align="left" rowspan="1" colspan="1"/>
+</tr>
+<tr>
+<td align="left" rowspan="1" colspan="1"><bold>Fecalibacterium</bold></td>
+<td align="left" rowspan="1" colspan="1">RC</td>
+<td align="left" rowspan="1" colspan="1"/>
+<td align="left" rowspan="1" colspan="1"/>
+<td align="left" rowspan="1" colspan="1"/>
+<td align="left" rowspan="1" colspan="1"/>
+<td align="left" rowspan="1" colspan="1"/>
+<td align="left" rowspan="1" colspan="1"/>
+<td align="left" rowspan="1" colspan="1">−0.616</td>
+<td align="left" rowspan="1" colspan="1">0.025</td>
+</tr>
+<tr>
+<td align="left" rowspan="1" colspan="1"><bold>Ruminococcus</bold></td>
+<td align="left" rowspan="1" colspan="1">LC</td>
+<td align="left" rowspan="1" colspan="1"/>
+<td align="left" rowspan="1" colspan="1"/>
+<td align="left" rowspan="1" colspan="1"/>
+<td align="left" rowspan="1" colspan="1"/>
+<td align="left" rowspan="1" colspan="1">0.799</td>
+<td align="left" rowspan="1" colspan="1">0.003</td>
+<td align="left" rowspan="1" colspan="1"/>
+<td align="left" rowspan="1" colspan="1"/>
+</tr>
+<tr>
+<td align="left" rowspan="1" colspan="1"/>
+<td align="left" rowspan="1" colspan="1">Fecal</td>
+<td align="left" rowspan="1" colspan="1"/>
+<td align="left" rowspan="1" colspan="1"/>
+<td align="left" rowspan="1" colspan="1">0.671</td>
+<td align="left" rowspan="1" colspan="1">0.004</td>
+<td align="left" rowspan="1" colspan="1"/>
+<td align="left" rowspan="1" colspan="1"/>
+<td align="left" rowspan="1" colspan="1"/>
+<td align="left" rowspan="1" colspan="1"/>
+</tr>
+</tbody>
+</table>
+</alternatives><table-wrap-foot><fn id="nt102"><label/><p>*Unadjusted P-values.</p></fn></table-wrap-foot></table-wrap></sec><sec id="s2f">
+<title>Relationship of the microbiome in HIV with CD4 count and viral load and other clinical characteristics</title>
+<p>             <list id="list2" list-type="simple"><list-item><label>a</label>
+<p><bold>Clinical characteristics.</bold> We examined the possibility of any antibiotic exposures in the HIV patients or controls affecting our results and conclusions: There were four subjects who had antibiotic exposures in the HIV group within 1 month of sample collection. In total, 2/22 of the control subjects and 8/21 of the HIV subjects had a history of antibiotic use anytime within the past 1 year. The two control subjects had not used any antibiotics within the last 3 months, but were exposed to antibiotics within 12 months. Amongst the HIV subjects, one was on TMP-SMZ prophylaxis and another was prescribed this although did not report himself as taking it. In the other 6 HIV-positive subjects, the last antibiotic use in the subjects were three weeks prior to sample collection (n = 2), 4 months prior to sample collection (n = 1), 6 months prior to sample collection (n = 1), 7 months prior to sample collection (n = 1), and 12 months prior to sample collection (n = 1). When samples from subjects who have any antibiotic exposures were examined against the rest of the samples in terms of diversity indices, we noted no differences for samples collected from subjects with an antibiotic exposure within the past 1 month versus those with no antibiotic exposures (<xref ref-type="supplementary-material" rid="ppat.1003829.s007">Figure S7</xref>). Similarly, we noted no difference between the samples collected from subjects with an antibiotic exposure within the past 3 months versus those with no antibiotic exposures (<xref ref-type="supplementary-material" rid="ppat.1003829.s007">Figure S7</xref>). However, there appeared to be some difference between samples collected from subjects with an antibiotic exposure within the past 1 year versus those with no antibiotic exposures (<xref ref-type="supplementary-material" rid="ppat.1003829.s007">Figure S7</xref>).</p>
+</list-item></list>
+    
+    
+    We then eliminated all the samples with any antibiotic exposures from the diversity analyses, and reanalyzed the data. The reduction in diversity in the HIV samples versus controls was preserved when all samples were examined (<xref ref-type="supplementary-material" rid="ppat.1003829.s008">Figure S8</xref>). By site, the reduction in diversity in the HIV samples versus controls was preserved in the TI and RC, whereas differences in the LC or F samples were not apparent (<xref ref-type="supplementary-material" rid="ppat.1003829.s008">Figure S8</xref>). In subject group comparisons, in a NMDS analysis using Bray-Curtis distances and in a PCO plot using Unifrac distances, we noted no differences between samples collected from subjects with antibiotic exposure within 1 month against those collected from subjects with no antibiotic exposures (Figures S9). We also noted no difference between the samples collected from subjects without antibiotic exposures and those with antibiotic exposures within 3 months or within 1 year of mucosal sampling (<xref ref-type="supplementary-material" rid="ppat.1003829.s009">Figure S9</xref>). Therefore, it is highly unlikely that antibiotic use in the HIV setting explains the microbiome changes that have been noted above.Among the HIV subjects, only four subjects admitted to any drug use and only three of these were current users. The drugs used were cocaine (n = 3), marijuana (n = 1), and methamphetamines (n = 1). When samples from these subjects were compared to the samples from non-drug users, we noted no differences in NMDS or PCO plots (<xref ref-type="supplementary-material" rid="ppat.1003829.s010">Figure S10</xref>).</p>
+    
+    
+    <list list-type="simple" continued-from="list2"><list-item><label>b</label>
+<p><bold>CD4+ T- cell counts.</bold> Diversity indices did not show a difference between those HIV infected subjects with high and low CD4 counts at cutoffs of 200 and 500 in all subjects as well as those subjects without any antibiotic exposures (<xref ref-type="supplementary-material" rid="ppat.1003829.s011">Figures S11</xref> and <xref ref-type="supplementary-material" rid="ppat.1003829.s012">S12</xref>). In PCO analysis using Unifrac distances and in NMDS analysis using Bray-Curtis distances, samples belonging to subjects whose CD4+ T cell counts were &lt;200 were not appearing clustered together, and were not separated from samples belonging to subjects whose CD4+ T cell counts were &gt;200. (<xref ref-type="supplementary-material" rid="ppat.1003829.s013">Figure S13</xref>). No apparent separation was seen for samples coming from subjects whose CD4+ T cell counts were &lt;500, versus those with CD4+ T cell counts &gt;500 (<xref ref-type="supplementary-material" rid="ppat.1003829.s013">Figure S13</xref>). There were no significant correlations between CD4+ T cell count and individual bacterial taxa.</p>
+</list-item>
+    
+        <list-item><label>c</label>
+<p><bold>Viral load.</bold> In our dataset, seventeen out of 21 HIV- infected subjects had undetectable viral loads, so it was not possible to perform a correlation between the microbiome and viral load. In alpha diversity or ordination analyses, we did not note a significant difference between samples from viremic subjects versus non-viremic subjects (<xref ref-type="supplementary-material" rid="ppat.1003829.s014">Figures S14</xref> and <xref ref-type="supplementary-material" rid="ppat.1003829.s015">S15</xref>).</p>
+</list-item></list>
+</sec></sec><sec id="s3">
+<title>Discussion</title>
+<p>This study represents a first global look at the lower GI tract microbiome in HIV-infected subjects using sequencing technologies. Our data shows that the lower intestinal mucosal bacterial populations in HIV-infected subjects are less diverse, definitely distinct from non-HIV controls, and composed more frequently of bacterial populations that are potentially pathogenic. Such disarray in the lower gut microbiome during HIV-infection goes along with findings of increased gut permeability in HIV and may be one of the contributing etiologic factors to HIV progression, warranting further investigation. Notably, the microbiome in HIV-infected subjects is so different that the cases can be distinctly separated from healthy controls based on global microbiome composition. In many other pyrosequencing experiments in human subjects, in unconstrained ordination analyses, the variability of the GI tract microbiome itself between subjects or samples, usually outweighs the effects seen as a result of disease. Such a large magnitude of disarray in the GI tract microbiome in HIV signals the importance of the GI tract microbiome in HIV infection, and could be both a consequence of HIV infection itself and/or a contributor to disease progression.</p>
+<p>When the individual genera associated with HIV-infected subjects and controls are examined, an important finding is the loss of a significant set of genera associated with controls in the HIV cases, typical of a dysbiotic microbiome. In many instances these are genera that are thought to be beneficial such as Bacteroides, which was negatively associated with IL-6 in our HIV cases. The network analysis also suggests that HIV is characterized by the loss of OTUs, and a change across all samples. In fact, while the HIV microbiome is a less diverse microbiome, the samples in the HIV group are farther apart from each other in our network analysis suggesting that the gain of bacteria among HIV samples is rather numerous and can vary across persons infected with HIV. Furthermore, nearly all of the bacterial taxa we have found to be associated with HIV in our study have also shown to be potentially pathogenic organisms in many other disease states, though some are rarely pathogenic. When we look at these one by one, the following can be said about the genera associated with HIV: Escherichia and other genera from Enterobacteriaceae, Campylobacter, various genera from Fusobacteriaceae are common pathogens of UTI, bacteremia, gastrointestinal infections, and periodontitis and necrotizing infections/abscesses. Catenibacterium has previously been associated with presence of uremia in subjects with end stage renal disease <xref ref-type="bibr" rid="ppat.1003829-Vaziri1">[13]</xref>. Mogibacterium has been found in the sputum of people with tuberculosis <xref ref-type="bibr" rid="ppat.1003829-Cheung1">[14]</xref> and has also been associated with periodontitis <xref ref-type="bibr" rid="ppat.1003829-Colombo1">[15]</xref>, <xref ref-type="bibr" rid="ppat.1003829-Sato1">[16]</xref> and endodontic infections <xref ref-type="bibr" rid="ppat.1003829-Rolph1">[17]</xref>. Ralstonia are plant pathogens but have been emerging in case reports of community acquired pneumonia <xref ref-type="bibr" rid="ppat.1003829-Rammaert1">[18]</xref>, <xref ref-type="bibr" rid="ppat.1003829-Pan1">[19]</xref> as well as becoming increasingly identified as infectious agents in cystic fibrosis patients <xref ref-type="bibr" rid="ppat.1003829-Davies1">[20]</xref>,immunocompromised individuals with hematological malignancies <xref ref-type="bibr" rid="ppat.1003829-Barbut1">[21]</xref>, <xref ref-type="bibr" rid="ppat.1003829-Xu1">[22]</xref>, and in nosocomial infections <xref ref-type="bibr" rid="ppat.1003829-Ryan1">[23]</xref>. Brachyspira is the cause of intestinal spirochetosis in both animals and humans; and have previously been described as a cause of chronic diarrhea in HIV subjects <xref ref-type="bibr" rid="ppat.1003829-Ena1">[24]</xref>. While Prevotella are commonly found in healthy individuals in the GI tract, they could be pathogenic at other sites across the body such as the oral mucosa or the vagina. Prevotella are associated with anaerobic infections of the respiratory tract such as aspiration pneumonia, lung abscess, chronic otitis media and sinusitis; abscesses round the mouth; urinary tract infections; brain abscesses; osteomyelitis ; periodontal disease; in addition to their well-documented presence in bacterial vaginosis.</p>
+<p>Previous studies on the vaginal microbiome in HIV also have suggested a significant change at this site <xref ref-type="bibr" rid="ppat.1003829-Watts1">[25]</xref>–<xref ref-type="bibr" rid="ppat.1003829-Hummelen1">[29]</xref>, with an increased diversity in the vaginal environment in HIV <xref ref-type="bibr" rid="ppat.1003829-Spear2">[30]</xref>. In contrast, our results suggest a decreased diversity in the GI tract microbiome of HIV-infected subjects. This may be due to the inherent nature of the bacterial communities at these different mucosal sites: There is low diversity typically seen in the vaginal environment with high specialization for certain functions, such as regulation of vaginal pH, which shows correlation with microbiome composition <xref ref-type="bibr" rid="ppat.1003829-1">[31]</xref>. In contrast, high diversity is typically seen in the GI tract in the healthy state <xref ref-type="bibr" rid="ppat.1003829-1">[31]</xref>, with reductions in diversity seen in most disease states investigated to date across multiple studies (e.g. inflammatory bowel disease and colon cancer) <xref ref-type="bibr" rid="ppat.1003829-Sanapareddy1">[32]</xref>–<xref ref-type="bibr" rid="ppat.1003829-Manichanh1">[34]</xref>. One of the bacterial taxa associated with bacterial vaginosis in the vaginal environment in women with and without HIV has been Prevotella <xref ref-type="bibr" rid="ppat.1003829-Spear2">[30]</xref>, which was also identified to be increased in the GI tract specimens from HIV cases in our study. This co-occurrence of Prevotella in the HIV GI tract specimens and in bacterial vaginosi
