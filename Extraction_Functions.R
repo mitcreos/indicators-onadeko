@@ -2,48 +2,52 @@ library(tidyverse)
 library(xml2)
 library(docstring)
 
-
-get_contrib_roles = function(contrib_nodes){
-  #'Extract contributor information
-  #'
-  #'Takes in a vector of contrib nodes and extracts name, contributor type, and contributor role from it
-  dt <- tibble()
-  for (item in contrib_nodes){
-    name = item %>% xml_child(search = "name") %>% xml_text()
-    contrib_type = item %>% xml_attr("contrib-type")
-    roles = paste(item %>% xml_find_all("role") %>% xml_text(), collapse = ', ')
-    dt <- bind_rows(dt, tibble(Name = name, ContribType = contrib_type, Roles = roles))
-  }
-  return (dt)
-}
-
-get_contrib_roles_matrix = function(contrib_nodes){
-  #'Extract contributor information
-  #'
-  #'Takes in a vector of contrib nodes and extracts name, contributor type, and contributor role from it
-    tempmatrix <- matrix(data = NA, ncol = 3,nrow = 5000)
-    for (i in 1:length(contrib_nodes)){
-    contrib_node = contrib_nodes[i]
-    name = contrib_node %>% xml_child(search = "name") %>% xml_text()
-    contrib_type = contrib_node %>% xml_attr("contrib-type")
-    roles = paste(contrib_node %>% xml_find_all("role") %>% xml_text(), collapse = ', ')
-    tempmatrix[i,] <- c(name, contrib_type, roles)
-    }
-    tempmatrix <- tempmatrix[rowSums(is.na(tempmatrix)) != ncol(tempmatrix),]
-  return (tempmatrix)
-}
-
-
-
 # testfile = 'journal.pone.0254062.xml'
 #
 # filepath = file.path('./allofplos',testfile)
 # xml = read_xml(filepath)
-#
+# testfiles = c('journal.pone.0254062.xml','journal.pone.0254062.xml')
+# #
+
 # xml
 # items = xml %>% xml_find_all("//contrib")
 # items
+#
+
+# 10.1371/journal.pbio.2004644
+
+
+get_contrib_roles_matrix_map_test = function(contrib_node){
+  #'Extract contributor information
+  #'
+  #'Takes in a vector of contrib nodes and extracts name, contributor type, and contributor role from it
+
+  doi = contrib_node %>% xml_find_first(xpath = "//article-id[@pub-id-type='doi']") %>% xml_text()
+  surname = contrib_node %>% xml_child(search = "name") %>% xml_child(search = "surname") %>% xml_text()
+  given_name = contrib_node %>% xml_child(search = "name") %>% xml_child(search = "given-names") %>% xml_text()
+  # name = tibble(surname, given_name)
+  contrib_type = contrib_node %>% xml_attr("contrib-type")
+  roles = tibble(contrib_node %>% xml_find_all("role") %>% xml_text())
+  peer_info = !is.na(contrib_node %>% xml_find_first(xpath = "//sub-article[@article-type='aggregated-review-documents']") %>% xml_text())
+  data = tibble('DOI' = doi, 'Surname' = surname,'Given Name' = given_name, 'Contrib_type' = contrib_type,'Role' = roles, 'Peer' = peer_info) %>% nest(Role = Role)
+  return(data)
+}
+
+getfromfile<- function(file){
+  filepath = file.path('./allofplos',file)
+  xmlfront = read_xml(filepath) %>% xml_child(search = 'front')
+  contrib_nodes = xml_find_all(xmlfront, "//contrib")
+  # df = map_dfr(contrib_nodes, get_contrib_roles_matrix_map_test)
+  df = map(contrib_nodes, get_contrib_roles_matrix_map_test) %>% list_rbind()
+  return(df)
+}
+
+
 # item = items[1]
+# #
+# View(get_contrib_roles_matrix_map_test(item))
+
+
 #
 # roles = paste(item %>% xml_find_all("role") %>% xml_text(), collapse = ', ')
 # roles
