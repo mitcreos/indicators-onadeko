@@ -16,6 +16,8 @@ ALLFILES = list.files(path = "./allofplos", pattern = NULL, all.files = FALSE,
 Data = map(ALLFILES, getfromfile, .progress = TRUE)  %>% list_rbind() %>% group_by(DOI,Peer) %>% nest()
 
 
-saveRDS(Data, file = "Contrib_dataV2.rds")
+saveRDS(Data, file = "Contrib_dataV4.rds")
 
 View(Data)
+
+
