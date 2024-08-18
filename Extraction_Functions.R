@@ -2,10 +2,11 @@ library(tidyverse)
 library(xml2)
 library(docstring)
 
-# testfile = 'journal.pone.0254062.xml'
+testfile = 'journal.pone.0254062.xml'
 #
-# filepath = file.path('./allofplos',testfile)
-# xml = read_xml(filepath)
+filepath = file.path('./allofplos',testfile)
+xml = read_xml(filepath)
+
 # testfiles = c('journal.pone.0254062.xml','journal.pone.0254062.xml')
 # file = 'journal.pone.0277452.xml'
 # #
@@ -46,15 +47,40 @@ getfromfile<- function(file){
 }
 
 
-# item = items[1]
-# #
-# View(getfromfile(file))
 
 
+get_peer_review_names = function(file){
+  #'Extract contributor information
+  #'
+  #'Takes in a contrib node and extracts name, contributor type, and contributor role from it
+  filepath = file.path('./allofplos',file)
+  xml = read_xml(filepath)
+  doi = xml %>% xml_find_first(xpath = "//article-id[@pub-id-type='doi']") %>% xml_text()
+  peer_info = !is.na(xml %>% xml_find_first(xpath = "//sub-article[@article-type='aggregated-review-documents']") %>% xml_text())
+  if (length(peer_info) > 0){
+    reviewers = c()
+    p = xml %>% xml_find_all(xpath = "//sub-article[@article-type='aggregated-review-documents']") %>% xml_find_all(xpath = ".//body") %>% xml_find_all(xpath = ".//p") %>% xml_text()
+    helper = function(item){
+      if(grepl('Yes:',item)){
+        name = sub(".*Yes:", "", item)
+        return(name)
+      }
+    }
+    testr = map(p, helper) %>% discard(is.null)
+    if (length(testr) > 0){
+    data = tibble('DOI' = doi, 'Reviewers' = testr) %>% nest(Reviewers = Reviewers)
+    return (data)
+    }
+  }
+}
+
+
+# View(get_peer_review_names('journal.pone.0254062.xml'))
+# filepath = file.path('./allofplos',filepath = file.path('./allofplos','journal.pbio.0020268.xml')
+#   xml = read_xml(filepath)
+#   doi = xml %>% xml_find_first(xpath = "//article-id[@pub-id-type='doi']") %>% xml_text()
+#   peer_info = !is.na(xml %>% xml_find_first(xpath = "//sub-article[@article-type='aggregated-review-documents']") %>% xml_text()))
+# xml = read_xml(filepath)
+# doi = xml %>% xml_find_first(xpath = "//article-id[@pub-id-type='doi']") %>% xml_text()
+# peer_info = !is.na(xml %>% xml_find_first(xpath = "//sub-article[@article-type='aggregated-review-documents']") %>% xml_text())
 #
-# roles = paste(item %>% xml_find_all("role") %>% xml_text(), collapse = ', ')
-# roles
-#
-# test = c('xAQ','y','z')
-# x = paste(test, collapse=', ' )
-# x
