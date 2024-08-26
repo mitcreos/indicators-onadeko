@@ -2,10 +2,10 @@ library(tidyverse)
 library(xml2)
 library(docstring)
 
-testfile = 'journal.pone.0254062.xml'
-#
-filepath = file.path('./allofplos',testfile)
-xml = read_xml(filepath)
+# testfile = 'journal.pone.0254062.xml'
+# #
+# filepath = file.path('./allofplos',testfile)
+# xml = read_xml(filepath)
 
 # testfiles = c('journal.pone.0254062.xml','journal.pone.0254062.xml')
 # file = 'journal.pone.0277452.xml'
@@ -25,23 +25,47 @@ get_contrib_roles_matrix_map_test = function(contrib_node){
   #'Takes in a contrib node and extracts name, contributor type, and contributor role from it
 
   doi = contrib_node %>% xml_find_first(xpath = "//article-id[@pub-id-type='doi']") %>% xml_text()
+
+  epub_date = contrib_node %>% xml_find_first(xpath = "//pub-date[@pub-type='epub']")
+  edate = paste(epub_date %>% xml_child(search = "day") %>% xml_text(), epub_date %>% xml_child(search = "month") %>% xml_text(), epub_date %>% xml_child(search = "year") %>% xml_text(), sep = '-' )
+
+  hist_date_rec = contrib_node %>% xml_find_first(xpath = "//history/date[@date-type='received']")
+  recdate = paste(hist_date_rec %>% xml_child(search = "day") %>% xml_text(), hist_date_rec %>% xml_child(search = "month") %>% xml_text(), hist_date_rec %>% xml_child(search = "year") %>% xml_text(), sep = '-' )
+
+  hist_date_acc = contrib_node %>% xml_find_first(xpath = "//history/date[@date-type='accepted']")
+  accdate = paste(hist_date_acc %>% xml_child(search = "day") %>% xml_text(), hist_date_acc %>% xml_child(search = "month") %>% xml_text(), hist_date_acc %>% xml_child(search = "year") %>% xml_text(), sep = '-' )
+
+  dates = tibble('EpubDate' = edate, 'RecDate' = recdate, 'AccDate' = accdate)
+
   surname = contrib_node %>% xml_child(search = "name") %>% xml_child(search = "surname") %>% xml_text()
   given_name = contrib_node %>% xml_child(search = "name") %>% xml_child(search = "given-names") %>% xml_text()
-  # name = tibble(surname, given_name)
+
+  affnum = contrib_node %>% xml_find_all(xpath = ".//xref[@ref-type='aff']") %>% xml_attr("rid")
+  affpath = paste("//aff[@id='", affnum, "']",sep="")
+  institution = contrib_node %>% xml_find_first(xpath = affpath) %>% xml_child(search = "addr-line") %>% xml_text()
+  if (is.na(institution)){
+    institution = contrib_node %>% xml_find_first(xpath = affpath) %>% xml_text()
+  }
   contrib_type = contrib_node %>% xml_attr("contrib-type")
   orcid = contrib_node %>% xml_find_first(xpath = ".//contrib-id[@contrib-id-type='orcid']") %>% xml_text()
   orcid = gsub('https://orcid.org/', '',orcid)
-  roles = tibble(contrib_node %>% xml_find_all("role") %>% xml_text())
+  roles = tibble(contrib_node %>% xml_find_all(".//role") %>% xml_text())
   peer_info = !is.na(contrib_node %>% xml_find_first(xpath = "//sub-article[@article-type='aggregated-review-documents']") %>% xml_text())
-  data = tibble('DOI' = doi, 'Surname' = surname,'Given Name' = given_name, 'Contrib_type' = contrib_type,'Orcid' = orcid, 'Role' = roles, 'Peer' = peer_info) %>% nest(Role = Role)
+  data_info = !is.na(contrib_node %>% xml_find_first(xpath = "//custom-meta[@id='data-availability']") %>% xml_text())
+
+  if (nrow(roles) == 0){
+    roles = tibble('None Stated')
+  }
+  # data = tibble('DOI' = doi, 'Dates' = dates, 'Surname' = surname,'Given Name' = given_name, 'Institution' = institution, 'Contrib_type' = contrib_type,'Orcid' = orcid, 'Role' = roles, 'Peer' = peer_info, 'Data' = data_info) %>% nest (Role = Role, Dates = Dates)
+  data = tibble('DOI' = doi, 'PubDate' = edate, 'RecDate' = recdate, 'AccDate' =accdate,'Surname' = surname,'Given Name' = given_name, 'Institution' = institution, 'Contrib_type' = contrib_type,'Orcid' = orcid, 'Role' = roles, 'Peer' = peer_info, 'Data' = data_info) %>% nest (Role = Role)
+
+  # View(data)
   return(data)
 }
 
 getfromfile<- function(file){
   filepath = file.path('./allofplos',file)
-  xmlfront = read_xml(filepath) %>% xml_child(search = 'front')
-  contrib_nodes = xml_find_all(xmlfront, ".//contrib")
-  # df = map_dfr(contrib_nodes, get_contrib_roles_matrix_map_test)
+  contrib_nodes = read_xml(filepath) %>% xml_child(search = 'front')  %>% xml_find_all(xpath = './/contrib-group') %>% xml_find_all(xpath = './/contrib')
   df = map(contrib_nodes, get_contrib_roles_matrix_map_test) %>% list_rbind()
   return(df)
 }
@@ -74,13 +98,18 @@ get_peer_review_names = function(file){
   }
 }
 
-
-# View(get_peer_review_names('journal.pone.0254062.xml'))
-# filepath = file.path('./allofplos',filepath = file.path('./allofplos','journal.pbio.0020268.xml')
-#   xml = read_xml(filepath)
-#   doi = xml %>% xml_find_first(xpath = "//article-id[@pub-id-type='doi']") %>% xml_text()
-#   peer_info = !is.na(xml %>% xml_find_first(xpath = "//sub-article[@article-type='aggregated-review-documents']") %>% xml_text()))
-# xml = read_xml(filepath)
-# doi = xml %>% xml_find_first(xpath = "//article-id[@pub-id-type='doi']") %>% xml_text()
-# peer_info = !is.na(xml %>% xml_find_first(xpath = "//sub-article[@article-type='aggregated-review-documents']") %>% xml_text())
 #
+# # View(get_peer_review_names('journal.pone.0254062.xml'))
+# filepath = file.path('./allofplos','journal.pbio.0020268.xml')
+# file1 = 'journal.pbio.0020268.xml'
+# file2 = 'journal.pone.0254062.xml'
+# file3 = 'journal.pbio.0000001.xml'
+# View(getfromfile(file3))
+# View(get_peer_review_names(file2))
+# xml = read_xml(filepath)
+# xmlfront = read_xml(filepath) %>% xml_child(search = 'front') %>% xml_find_all(xpath = './/contrib-group') %>% xml_find_all(xpath = './/contrib')
+# # doi = xml %>% xml_find_first(xpath = "//article-id[@pub-id-type='doi']") %>% xml_text()
+# # peer_info = !is.na(xml %>% xml_find_first(xpath = "//sub-article[@article-type='aggregated-review-documents']") %>% xml_text())
+# xmlfront
+#
+
