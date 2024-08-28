@@ -25,11 +25,25 @@ get_contrib_roles_matrix_map_test = function(contrib_node){
   given_name = contrib_node %>% xml_child(search = "name") %>% xml_child(search = "given-names") %>% xml_text()
 
   affnum = contrib_node %>% xml_find_all(xpath = ".//xref[@ref-type='aff']") %>% xml_attr("rid")
-  affpath = paste("//aff[@id='", affnum, "']",sep="")
-  institution = contrib_node %>% xml_find_first(xpath = affpath) %>% xml_child(search = "addr-line") %>% xml_text()
-  if (is.na(institution)){
-    institution = contrib_node %>% xml_find_first(xpath = affpath) %>% xml_text()
+  instlist = c()
+  for(num in affnum){
+    affpath = paste("//aff[@id='", num, "']",sep="")
+    institution = contrib_node %>% xml_find_first(xpath = affpath) %>% xml_child(search = "addr-line") %>% xml_text()
+    if (is.na(institution)){
+      institution = contrib_node %>% xml_find_first(xpath = affpath) %>% xml_text()
+    }
+    instlist = c(instlist, institution)
   }
+
+  insttibble = tibble(instlist)
+  # View(insttibble)
+
+  # affpath = paste("//aff[@id='", affnum, "']",sep="")
+  # institution = contrib_node %>% xml_find_first(xpath = affpath) %>% xml_child(search = "addr-line") %>% xml_text()
+  # if (is.na(institution)){
+  #   institution = contrib_node %>% xml_find_first(xpath = affpath) %>% xml_text()
+  # }
+
   contrib_type = contrib_node %>% xml_attr("contrib-type")
   orcid = contrib_node %>% xml_find_first(xpath = ".//contrib-id[@contrib-id-type='orcid']") %>% xml_text()
   orcid = gsub('https://orcid.org/', '',orcid)
@@ -41,8 +55,7 @@ get_contrib_roles_matrix_map_test = function(contrib_node){
     roles = tibble('None Stated')
   }
   # data = tibble('DOI' = doi, 'Dates' = dates, 'Surname' = surname,'Given Name' = given_name, 'Institution' = institution, 'Contrib_type' = contrib_type,'Orcid' = orcid, 'Role' = roles, 'Peer' = peer_info, 'Data' = data_info) %>% nest (Role = Role, Dates = Dates)
-  data = tibble('DOI' = doi, 'PubDate' = edate, 'RecDate' = recdate, 'AccDate' =accdate,'Surname' = surname,'Given Name' = given_name, 'Institution' = institution, 'Contrib_type' = contrib_type,'Orcid' = orcid, 'Role' = roles, 'Peer' = peer_info, 'Data' = data_info) %>% nest (Role = Role)
-
+   data = tibble('DOI' = doi, 'PubDate' = edate, 'RecDate' = recdate, 'AccDate' =accdate,'Surname' = surname,'Given Name' = given_name, 'Contrib_type' = contrib_type,'Orcid' = orcid, 'Role' = roles, 'Peer' = peer_info, 'Data' = data_info) %>% nest(Role=Role)
   # View(data)
   return(data)
 }
@@ -82,17 +95,40 @@ get_peer_review_names = function(file){
   }
 }
 
+
+get_funding_info = function(file){
+  #'Extract contributor information
+  #'
+  #'Takes in a contrib node and extracts name, contributor type, and contributor role from it
+  filepath = file.path('./allofplos',file)
+  xml = read_xml(filepath)
+  doi = xml %>% xml_find_first(xpath = "//article-id[@pub-id-type='doi']") %>% xml_text()
+  award_nodes = xml %>% xml_find_all(xpath = './/funding-group/award-group')
+  extractinfo <- function(award_node){
+    surname = award_node %>% xml_child(search = 'principal-award-recipient') %>% xml_child(search = "name") %>% xml_child(search = "surname") %>% xml_text()
+    given_name = award_node %>% xml_child(search = 'principal-award-recipient') %>% xml_child(search = "name") %>% xml_child(search = "given-names") %>% xml_text()
+    institution = award_node %>% xml_find_first(xpath = ".//institution")  %>% xml_text()
+    table = tibble(surname, given_name, institution)
+    return(table)
+  }
+
+  df = map(award_nodes, extractinfo) %>% list_rbind()
+  data = tibble('DOI' = doi, 'info' = df) %>% nest(info = info)
+  return(data)
+}
+
 #
 
-plosviews("10.1371/journal.pone.0254062")
+# plosviews("10.1371/journal.pone.0254062")
 
 # # View(get_peer_review_names('journal.pone.0254062.xml'))
 # filepath = file.path('./allofplos','journal.pbio.0020268.xml')
 # file1 = 'journal.pbio.0020268.xml'
 # file2 = 'journal.pone.0254062.xml'
 # file3 = 'journal.pbio.0000001.xml'
-# View(getfromfile(file3))
+# View(getfromfile(file2))
 # View(get_peer_review_names(file2))
+# View(get_funding_info(file2))
 # xml = read_xml(filepath)
 # xmlfront = read_xml(filepath) %>% xml_child(search = 'front') %>% xml_find_all(xpath = './/contrib-group') %>% xml_find_all(xpath = './/contrib')
 # # doi = xml %>% xml_find_first(xpath = "//article-id[@pub-id-type='doi']") %>% xml_text()

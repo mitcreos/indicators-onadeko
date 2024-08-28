@@ -26,3 +26,7 @@ Reviewer_names = map(ALLFILES, get_peer_review_names, .progress = TRUE) %>% list
 #
 #
 View(Reviewer_names)
+
+Funding = map(ALLFILES[1:1000], get_funding_info, .progress = TRUE)  %>% list_rbind()
+
+View(Funding)
