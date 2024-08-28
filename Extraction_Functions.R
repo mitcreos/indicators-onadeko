@@ -1,23 +1,7 @@
 library(tidyverse)
 library(xml2)
 library(docstring)
-
-# testfile = 'journal.pone.0254062.xml'
-# #
-# filepath = file.path('./allofplos',testfile)
-# xml = read_xml(filepath)
-
-# testfiles = c('journal.pone.0254062.xml','journal.pone.0254062.xml')
-# file = 'journal.pone.0277452.xml'
-# #
-
-# xml
-# items = xml %>% xml_find_all("//contrib")
-# items
-#
-
-# 10.1371/journal.pbio.2004644
-
+library(rplos)
 
 get_contrib_roles_matrix_map_test = function(contrib_node){
   #'Extract contributor information
@@ -99,6 +83,9 @@ get_peer_review_names = function(file){
 }
 
 #
+
+plosviews("10.1371/journal.pone.0254062")
+
 # # View(get_peer_review_names('journal.pone.0254062.xml'))
 # filepath = file.path('./allofplos','journal.pbio.0020268.xml')
 # file1 = 'journal.pbio.0020268.xml'
