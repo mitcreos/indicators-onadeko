@@ -57,6 +57,7 @@ saveRDS(ReviewersWithImputation, file = "./Data(rds files)/ReviewersImputation1.
 
 ContribImputation = uncount(tibble(test), 2824282)
 View(ContribImputation)
+# for cleaner code: (floor(nrow(ContribImputation)/1000)+1) = 283
 
 #For loop to sequentially run the imputation over the file without running out of memory(hopefully)
 for (i in 1:283){
@@ -88,3 +89,5 @@ View(Funding)
 
 #
 # gender_mean(Given_imputation$og_pr_F)
+
+
