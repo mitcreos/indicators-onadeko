@@ -8,6 +8,15 @@ library(stringr)
 ImportedData = readRDS("./Data(rds files)/Contrib_dataV7.rds")
 ImportedData2 = readRDS("./Data(rds files)/Reviewer_names.rds")
 
+# Function to parse given name as needed
+name_parsing <- function(name){
+
+}
+
+split_and_rejoin_imputation <- function(){
+
+}
+
 # View(ImportedData)
 
 Contribs = ImportedData %>% unnest(data)
@@ -16,6 +25,9 @@ ContribsEditedTibble = Contribs[,"Given Name"] %>% rename(given = 'Given Name')%
 
 test = opengender::add_gender_predictions(ContribsEditedTibble[1,], dicts = c("wgen2"))
 
+View(test)
+
+bigtest = opengender::add_gender_predictions(ContribsEditedTibble[1:100000,], dicts = c("wgen2"))
 #Reviewer Information
 
 Reviewers = ImportedData2 %>% unnest(Reviewers)
@@ -85,9 +97,12 @@ View(ContribWithImputation[20000,])
 #Funding Imputation
 
 Funding = readRDS("./Data(rds files)/Funding_Info.rds") %>% unnest(info)
-View(Funding)
+FundingEditedTibble = tibble(given = Funding$info$given_name)
 
-#
+FundingEditedTibble2 = FundingEditedTibble %>% mutate(given = trimws(given)) %>% mutate(given = word(given, 1))
+
+View(FundingEditedTibble2)
+
 # gender_mean(Given_imputation$og_pr_F)
 
 

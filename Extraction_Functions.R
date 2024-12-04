@@ -55,7 +55,7 @@ get_contrib_roles_matrix_map_test = function(contrib_node){
     roles = tibble('None Stated')
   }
   # data = tibble('DOI' = doi, 'Dates' = dates, 'Surname' = surname,'Given Name' = given_name, 'Institution' = institution, 'Contrib_type' = contrib_type,'Orcid' = orcid, 'Role' = roles, 'Peer' = peer_info, 'Data' = data_info) %>% nest (Role = Role, Dates = Dates)
-   data = tibble('DOI' = doi, 'PubDate' = edate, 'RecDate' = recdate, 'AccDate' =accdate,'Surname' = surname,'Given Name' = given_name, 'Contrib_type' = contrib_type,'Orcid' = orcid, 'Role' = roles, 'Peer' = peer_info, 'Data' = data_info) %>% nest(Role=Role)
+   data = tibble('DOI' = doi, 'PubDate' = edate, 'RecDate' = recdate, 'AccDate' =accdate,'Surname' = surname,'Given Name' = given_name, 'Contrib_type' = contrib_type,'Orcid' = orcid, 'Role' = roles, 'Peer' = peer_info, 'DataAv' = data_info) %>% nest(Role=Role)
   # View(data)
   return(data)
 }
@@ -118,6 +118,7 @@ get_funding_info = function(file){
 }
 
 #
+
 
 # plosviews("10.1371/journal.pone.0254062")
 

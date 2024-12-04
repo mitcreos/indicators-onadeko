@@ -13,20 +13,23 @@ ALLFILES = list.files(path = "./allofplos", pattern = NULL, all.files = FALSE,
 # y = c(ALLFILES[1:10], 'journal.pone.0254062.xml')
 # y
 
-Data = map(ALLFILES, getfromfile, .progress = TRUE)  %>% list_rbind() %>% group_by(DOI,Peer, Data, PubDate, RecDate, AccDate) %>% nest()
+# Data = map(ALLFILES, getfromfile, .progress = TRUE)  %>% list_rbind() %>% group_by(DOI,Peer, DataAv, PubDate, RecDate, AccDate) %>% nest()
 
 
-# saveRDS(Data, file = "Contrib_dataV6.rds")
+# saveRDS(Data, file = "./Data(rds files)/Contrib_dataV7.rds")
 
-View(Data)
+# View(Data)
 
-Reviewer_names = map(ALLFILES, get_peer_review_names, .progress = TRUE) %>% list_rbind()
+# Reviewer_names = map(ALLFILES, get_peer_review_names, .progress = TRUE) %>% list_rbind()
 
 # saveRDS(Reviewer_names, file = "Reviewer_names.rds")
 #
 #
-View(Reviewer_names)
-
-Funding = map(ALLFILES[1:1000], get_funding_info, .progress = TRUE)  %>% list_rbind()
-
+# View(Reviewer_names)
+#
+Funding = map(ALLFILES, get_funding_info, .progress = TRUE)  %>% list_rbind()
+#
 View(Funding)
+
+saveRDS(Funding, file = "./Data(rds files)/Funding_Info.rds")
+
