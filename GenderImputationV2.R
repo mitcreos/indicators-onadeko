@@ -94,7 +94,8 @@ ReviewersWithImputation = Reviewers %>% bind_cols(ReviewersImputation)
 
 
 Contribs = ImportedData %>% unnest(data)
-ContribsEditedTibble = Contribs[,"Given Name"] %>% rename(Given_Name = "Given Name") %>% mutate(given = Given_Name %>% sapply(parse_name))
+ContribsEditedTibble = Contribs[,"Given Name"] %>% rename(Given_Name = "Given Name")
+ContribsEditedTibble = ContribsEditedTibble %>% mutate(given = Given_Name %>% sapply(parse_name))
 # test = opengender::add_gender_predictions(ContribsEditedTibble[1,], dicts = c("wgen2"))
 ContribImputation = split_and_rejoin_imputation(ContribsEditedTibble)
 ContribWithImputation = Contribs %>% bind_cols(ContribImputation)
