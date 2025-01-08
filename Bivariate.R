@@ -5,6 +5,8 @@ library(rplos)
 library(opengender)
 library(stringr)
 library(humaniformat)
+library(ggplot2)
+
 
 
 #Average Gender ratio
@@ -63,34 +65,138 @@ concat_rev= RevImput[, c(1, 6)] %>%
     Avg_F_Percent = mean(og_pr_F, na.rm = TRUE),
   )
 
-joined_data <- inner_join(concat_contrib, concat_rev, by = "DOI", suffix = c("Contributors", "Reviewers"))
+concat_fund= FundImput[, c(1, 5)] %>%
+  group_by(DOI) %>%
+  summarise(
+    Avg_F_Percent = mean(og_pr_F, na.rm = TRUE),
+  )
 
-correlation <- cor(
-  joined_data$Avg_F_PercentContributors,
-  joined_data$Avg_F_PercentReviewers,
+# Only getting first instance
+concat_contrib2 = ContImput[, c(1, 9, 14)] %>%
+  distinct(DOI, .keep_all = TRUE)
+
+concat_rev2 = RevImput[, c(1, 6)] %>%
+  distinct(DOI, .keep_all = TRUE)
+
+concat_fund2 = FundImput[, c(1, 5)] %>%
+  distinct(DOI, .keep_all = TRUE)
+
+
+joined_data_cr <- inner_join(concat_contrib, concat_rev, by = "DOI", suffix = c("Contributors", "Reviewers"))
+
+joined_data_cf <- inner_join(concat_contrib, concat_fund, by = "DOI", suffix = c("Contributors", "Funder"))
+
+joined_data_cr2 <- inner_join(concat_contrib2, concat_rev2, by = "DOI", suffix = c("Contributors", "Reviewers"))
+
+joined_data_cf2 <- inner_join(concat_contrib2, concat_fund2, by = "DOI", suffix = c("Contributors", "Funder"))
+
+correlationcr <- cor(
+  joined_data_cr$Avg_F_PercentContributors,
+  joined_data_cr$Avg_F_PercentReviewers,
   use = "complete.obs"
 )
-print(paste("Correlation between Female percentages:", correlation))
+
+correlationcf <- cor(
+  joined_data_cf$Avg_F_PercentContributors,
+  joined_data_cf$Avg_F_PercentFunder,
+  use = "complete.obs"
+)
+
+print(paste("Correlation between Female percentages:", correlationcr))
+print(paste("Correlation between Female percentages:", correlationcf))
+
+correlationcr2 <- cor(
+  joined_data_cr2$og_pr_FContributors,
+  joined_data_cr2$og_pr_FReviewers,
+  use = "complete.obs"
+)
+
+correlationcf2 <- cor(
+  joined_data_cf2$og_pr_FContributors,
+  joined_data_cf2$og_pr_FFunder,
+  use = "complete.obs"
+)
+
+print(paste("Correlation between Female percentages cr2:", correlationcr2))
+print(paste("Correlation between Female percentages cf2:", correlationcf2))
+
 
 # Visualize relationships
 # Scatter plot
-plot(
-  joined_data$Avg_F_PercentContributors,
-  joined_data$Avg_F_PercentReviewers,
-  main = "Contributors vs Reviewers (Average Female Percentages)",
-  xlab = "Contributors",
-  ylab = "Reviewers",
-  pch = 16
-)
+# plot(
+#   joined_data$Avg_F_PercentContributors,
+#   joined_data$Avg_F_PercentReviewers,
+#   main = "Contributors vs Reviewers (Average Female Percentages)",
+#   xlab = "Contributors",
+#   ylab = "Reviewers",
+#   pch = 16
+# )
 
 
+##PLOTS FOR CONTRIBUTOR VS REVIEWER COUNTS
+
+ggplot(joined_data_cr, aes(x = Avg_F_PercentContributors, y = Avg_F_PercentReviewers)) +
+  # geom_point(alpha = 0.5) +
+  geom_jitter(width = 0.01, height = 0.01, alpha = 0.5)+
+  labs(title = "Contributors vs Reviewers (Average Female Percentages)", x = "Contributors", y = "Reviewers") +
+  theme_minimal()
+
+ggplot(joined_data_cr, aes(x = Avg_F_PercentContributors, y = Avg_F_PercentReviewers)) +
+  # geom_point(alpha = 0.5) +
+  geom_bin2d(bins = 3) + # Adjust 'bins' to control the number of bins
+  # scale_fill_gradient(low = "blue", high = "pink")
+  labs(title = "Contributors vs Reviewers (Average Female Percentages)", x = "Contributors", y = "Reviewers") +
+  theme_minimal()
 
 
+ggplot(joined_data_cr2, aes(x = og_pr_FContributors, y = og_pr_FReviewers)) +
+  # geom_point(alpha = 0.5) +
+  geom_jitter(width = 0.01, height = 0.01, alpha = 0.5)+
+  labs(title = "Contributors vs Reviewers (Average Female Percentages)", x = "Contributors", y = "Reviewers") +
+  theme_minimal()
+
+ggplot(joined_data_cr2, aes(x = og_pr_FContributors, y = og_pr_FReviewers)) +
+  # geom_point(alpha = 0.5) +
+  geom_bin2d(bins = 3) + # Adjust 'bins' to control the number of bins
+  # scale_fill_gradient(low = "blue", high = "pink")
+  labs(title = "Contributors vs Reviewers (Average Female Percentages)", x = "Contributors", y = "Reviewers") +
+  theme_minimal()
+
+##PLOTS FOR CONTRIBUTOR VS FUNDING COUNTS
 
 
+ggplot(joined_data_cf, aes(x = Avg_F_PercentContributors, y = Avg_F_PercentFunder)) +
+  geom_point(alpha = 0.5) +
+  # geom_jitter(width = 0.01, height = 0.01, alpha = 0.5)+
+  labs(title = "Contributors vs Funders (Average Female Percentages)", x = "Contributors", y = "Funders") +
+  theme_minimal()
+
+ggplot(joined_data_cf2, aes(x = og_pr_FContributors, y = og_pr_FFunder)) +
+  geom_point(alpha = 0.5) +
+  # geom_jitter(width = 0.01, height = 0.01, alpha = 0.5)+
+  labs(title = "Contributors vs Funders (Average Female Percentages)", x = "Contributors", y = "Funders") +
+  theme_minimal()
+
+##SEEING IF a article had funding info and going by gender
+
+funded_info <- concat_contrib %>%
+  mutate(present = if_else(DOI %in% concat_fund$DOI, TRUE, FALSE))
 
 
+# ggplot(funded_info, aes(x = present)) +
+#   geom_histogram(binwidth = 0.5, fill = "blue", color = "black") +
+#   labs(title = "Histogram", x = "Values", y = "Frequency") +
+#   theme_minimal()
 
+ggplot(funded_info, aes(x = Avg_F_Percent, y = 0, color = present)) +
+  # geom_point(size = .1,alpha = .5) + # Adjust point size
+  geom_jitter(width = 0, height = 10, alpha = 0.5)+
+  scale_color_manual(values = c("red", "green"), labels = c("Not Present", "Present")) +
+  labs(title = "Scatter Plot of Names with Presence and Value",
+       x = 'gender',
+       y = NULL,
+       color = "Presence in Second Tibble") +
+  theme_minimal()
 
 
 
