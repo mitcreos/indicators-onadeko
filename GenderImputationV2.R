@@ -7,7 +7,8 @@ library(opengender)
 library(stringr)
 library(humaniformat)
 
-ImportedData = readRDS("./Data(rds files)/PlosData/Contrib_dataV7.rds")
+
+ImportedData = readRDS("./Data(rds files)/PlosData/Contrib_dataV8.rds")
 ImportedData2 = readRDS("./Data(rds files)/PlosData/Reviewer_names.rds")
 ImportedData3 = readRDS("./Data(rds files)/PlosData/Funding_Info.rds")
 Honorifics = read_lines("list-of-salutations-titles-honorifics.txt")
@@ -94,9 +95,15 @@ ReviewersWithImputation = Reviewers %>% bind_cols(ReviewersImputation)
 
 
 Contribs = ImportedData %>% unnest(data)
-ContribsEditedTibble = Contribs[,"Given Name"] %>% rename(Given_Name = "Given Name")
-ContribsEditedTibble = ContribsEditedTibble %>% mutate(given = Given_Name %>% sapply(parse_name))
-# test = opengender::add_gender_predictions(ContribsEditedTibble[1,], dicts = c("wgen2"))
+ContribsEdited = Contribs[,"Given Name"] %>% rename(Given_Name = "Given Name")
+y = ContribsEdited[1:100000,]$Given_Name
+library(parallel)
+
+
+result <- mclapply(y, parse_name, mc.cores = 4)
+
+ContribsEditedTibble = ContribsEdited %>% mutate(given = y)
+test = opengender::add_gender_predictions(ContribsEditedTibble[1,], dicts = c("wgen2"))
 ContribImputation = split_and_rejoin_imputation(ContribsEditedTibble)
 ContribWithImputation = Contribs %>% bind_cols(ContribImputation)
 

@@ -10,52 +10,49 @@ get_contrib_roles_matrix_map_test = function(contrib_node){
 
   doi = contrib_node %>% xml_find_first(xpath = "//article-id[@pub-id-type='doi']") %>% xml_text()
 
-  epub_date = contrib_node %>% xml_find_first(xpath = "//pub-date[@pub-type='epub']")
-  edate = paste(epub_date %>% xml_child(search = "day") %>% xml_text(), epub_date %>% xml_child(search = "month") %>% xml_text(), epub_date %>% xml_child(search = "year") %>% xml_text(), sep = '-' )
-
-  hist_date_rec = contrib_node %>% xml_find_first(xpath = "//history/date[@date-type='received']")
-  recdate = paste(hist_date_rec %>% xml_child(search = "day") %>% xml_text(), hist_date_rec %>% xml_child(search = "month") %>% xml_text(), hist_date_rec %>% xml_child(search = "year") %>% xml_text(), sep = '-' )
-
-  hist_date_acc = contrib_node %>% xml_find_first(xpath = "//history/date[@date-type='accepted']")
-  accdate = paste(hist_date_acc %>% xml_child(search = "day") %>% xml_text(), hist_date_acc %>% xml_child(search = "month") %>% xml_text(), hist_date_acc %>% xml_child(search = "year") %>% xml_text(), sep = '-' )
-
-  dates = tibble('EpubDate' = edate, 'RecDate' = recdate, 'AccDate' = accdate)
-
-  surname = contrib_node %>% xml_child(search = "name") %>% xml_child(search = "surname") %>% xml_text()
-  given_name = contrib_node %>% xml_child(search = "name") %>% xml_child(search = "given-names") %>% xml_text()
-
+  # epub_date = contrib_node %>% xml_find_first(xpath = "//pub-date[@pub-type='epub']")
+  # edate = paste(epub_date %>% xml_child(search = "day") %>% xml_text(), epub_date %>% xml_child(search = "month") %>% xml_text(), epub_date %>% xml_child(search = "year") %>% xml_text(), sep = '-' )
+  #
+  # hist_date_rec = contrib_node %>% xml_find_first(xpath = "//history/date[@date-type='received']")
+  # recdate = paste(hist_date_rec %>% xml_child(search = "day") %>% xml_text(), hist_date_rec %>% xml_child(search = "month") %>% xml_text(), hist_date_rec %>% xml_child(search = "year") %>% xml_text(), sep = '-' )
+  #
+  # hist_date_acc = contrib_node %>% xml_find_first(xpath = "//history/date[@date-type='accepted']")
+  # accdate = paste(hist_date_acc %>% xml_child(search = "day") %>% xml_text(), hist_date_acc %>% xml_child(search = "month") %>% xml_text(), hist_date_acc %>% xml_child(search = "year") %>% xml_text(), sep = '-' )
+  #
+  # dates = tibble('EpubDate' = edate, 'RecDate' = recdate, 'AccDate' = accdate)
+  #
+  # surname = contrib_node %>% xml_child(search = "name") %>% xml_child(search = "surname") %>% xml_text()
+  # given_name = contrib_node %>% xml_child(search = "name") %>% xml_child(search = "given-names") %>% xml_text()
+  #
   affnum = contrib_node %>% xml_find_all(xpath = ".//xref[@ref-type='aff']") %>% xml_attr("rid")
-  instlist = c()
-  for(num in affnum){
-    affpath = paste("//aff[@id='", num, "']",sep="")
-    institution = contrib_node %>% xml_find_first(xpath = affpath) %>% xml_child(search = "addr-line") %>% xml_text()
-    if (is.na(institution)){
-      institution = contrib_node %>% xml_find_first(xpath = affpath) %>% xml_text()
-    }
-    instlist = c(instlist, institution)
+  #
+
+  # instlist = c()
+  num = affnum[1]
+
+
+  affpath = paste("//aff[@id='", num, "']",sep="")
+  institution = contrib_node %>% xml_find_first(xpath = affpath) %>% xml_child(search = "addr-line") %>% xml_text()
+  if (is.na(institution)){
+    institution = contrib_node %>% xml_find_first(xpath = affpath) %>% xml_text()
+  }
+  if (is.na(institution)){
+    institution = 'NOT EXTRACTED'
   }
 
-  insttibble = tibble(instlist)
-  # View(insttibble)
 
-  # affpath = paste("//aff[@id='", affnum, "']",sep="")
-  # institution = contrib_node %>% xml_find_first(xpath = affpath) %>% xml_child(search = "addr-line") %>% xml_text()
-  # if (is.na(institution)){
-  #   institution = contrib_node %>% xml_find_first(xpath = affpath) %>% xml_text()
+  # contrib_type = contrib_node %>% xml_attr("contrib-type")
+  # orcid = contrib_node %>% xml_find_first(xpath = ".//contrib-id[@contrib-id-type='orcid']") %>% xml_text()
+  # orcid = gsub('https://orcid.org/', '',orcid)
+  # roles = tibble(contrib_node %>% xml_find_all(".//role") %>% xml_text())
+  # peer_info = !is.na(contrib_node %>% xml_find_first(xpath = "//sub-article[@article-type='aggregated-review-documents']") %>% xml_text())
+  # data_info = !is.na(contrib_node %>% xml_find_first(xpath = "//custom-meta[@id='data-availability']") %>% xml_text())
+
+  # if (nrow(roles) == 0){
+  #   roles = tibble('None Stated')
   # }
-
-  contrib_type = contrib_node %>% xml_attr("contrib-type")
-  orcid = contrib_node %>% xml_find_first(xpath = ".//contrib-id[@contrib-id-type='orcid']") %>% xml_text()
-  orcid = gsub('https://orcid.org/', '',orcid)
-  roles = tibble(contrib_node %>% xml_find_all(".//role") %>% xml_text())
-  peer_info = !is.na(contrib_node %>% xml_find_first(xpath = "//sub-article[@article-type='aggregated-review-documents']") %>% xml_text())
-  data_info = !is.na(contrib_node %>% xml_find_first(xpath = "//custom-meta[@id='data-availability']") %>% xml_text())
-
-  if (nrow(roles) == 0){
-    roles = tibble('None Stated')
-  }
-  # data = tibble('DOI' = doi, 'Dates' = dates, 'Surname' = surname,'Given Name' = given_name, 'Institution' = institution, 'Contrib_type' = contrib_type,'Orcid' = orcid, 'Role' = roles, 'Peer' = peer_info, 'Data' = data_info) %>% nest (Role = Role, Dates = Dates)
-   data = tibble('DOI' = doi, 'PubDate' = edate, 'RecDate' = recdate, 'AccDate' =accdate,'Surname' = surname,'Given Name' = given_name, 'Contrib_type' = contrib_type,'Orcid' = orcid, 'Role' = roles, 'Peer' = peer_info, 'DataAv' = data_info) %>% nest(Role=Role)
+   # data = tibble('DOI' = doi, 'PubDate' = edate, 'RecDate' = recdate, 'AccDate' =accdate,'Surname' = surname,'Given Name' = given_name, 'Contrib_type' = contrib_type,'Orcid' = orcid, 'Role' = roles, 'Peer' = peer_info, 'DataAv' = data_info, 'Institution' = institution) %>% nest(Role=Role)
+   data = tibble('DOI' = doi,'Institution' = institution)
   # View(data)
   return(data)
 }
