@@ -12,7 +12,7 @@ InstitutionData = readRDS("./Data(rds files)/PlosData/Contrib_dataV8(DOIandinsti
 
 smaller = InstitutionData[1:5,]
 
-test = opengender::add_dict_matches(smaller, col_map = c(text = 'Institution'), dicts = c("iso3166"))
+test = opengender::add_dict_matches(smaller, col_map = c(text = 'Institution'), dicts = c("iso3166","ror"))
 
 test2 = opengender::add_dict_matches(InstitutionData, col_map = c(text = 'Institution'), dicts = c("iso3166"))
 
@@ -49,7 +49,7 @@ split_and_rejoin_imputation <- function(institutions, col_map, dicts){
 col_map = c(text = 'Institution')
 dicts = c("iso3166, ror")
 
-InstImputation = split_and_rejoin_imputation(InstitutionData, col_map = c(text = 'Institution'), dicts = c("iso3166") )
+InstImputation = split_and_rejoin_imputation(InstitutionData[1:10,], col_map = c(text = 'Institution'), dicts = c("iso3166") )
 
 
 
