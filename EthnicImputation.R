@@ -26,38 +26,24 @@ parse_name <- function(name){
   returned_name = ''
   #Using Honorific DataBase
   Honorifics = read_lines("list-of-salutations-titles-honorifics.txt")
-  #removing parentesis and anything within them from an input
-  cleaned_text <- gsub("\\s*\\([^\\)]+\\)", "", name)
-  # print(cleaned_text)
-  #Converting the input to title case
-  cleaned_text <- str_to_title(cleaned_text, locale = "en")
-  # print(cleaned_text)
-  #Spliting the string at periods and spaces
-  segmented_word = unlist(strsplit(cleaned_text, c(" ")))
-  segmented_word = unlist(strsplit(segmented_word, c("[.]")))
-  # print(segmented_word)
-  # print('af')
-  assumed_first = trimws(segmented_word[1])
-  # print(assumed_first)
+  #removing parentesis and anything within them from an
 
-  tryCatch({
-    if ((nchar(assumed_first) != 1) && !(assumed_first %in% Honorifics)){
-      return (assumed_first)
-    }else{
-      for (i in 2:length(segmented_word)){
-        word = trimws(segmented_word[i])
-        if (i == length(segmented_word)){
-          return ('Not Processed')
-        }else if ((nchar(word) != 1) || (i == (length(segmented_word) - 1))){
-          return (word)
-        }else{
-          next
-        }
-      }
-    }
-  },error = function(msg){
-    return(NA)}
-  )
+  cleaned_text <-
+    name %>%
+    stringr::str_remove_all("\\(.+?\\)|[.]" ) %>%
+    stringr::str_to_title(locale = "en") %>%
+    stringr::str_split(" ")
+
+   temp.df <-
+     tibble::tibble (
+       t1 = as.character(lapply(cleaned_text,function(x)x[[1]])),
+       t2 = as.character(lapply(cleaned_text,function(x)ifelse(length(x)>1,x[[2]],NA)))
+   )
+
+  temp.df %>%
+     dplyr::transmute(result = ifelse(t1 %in% Honorifics, t2, t1)) %>%
+     pull(result)
+
 }
 
 Contribs = ImportedData %>% unnest(data)
@@ -105,8 +91,20 @@ ReviewersWithImputation = Reviewers %>% bind_cols(ReviewersImputation)
 
 
 Contribs = ImportedData %>% unnest(data)
-ContribsEdited = Contribs[,"Given Name"] %>% rename(Given_Name = "Given Name") %>% ungroup()
+#ContribsEdited = Contribs[,"Given Name"] %>% rename(Given_Name = "Given Name") %>% ungroup()
+
+ContribsEdited <- Contribs %>% ungroup() %>% dplyr::select(Given_Name = `Given Name`)
+
 # library(parallel)
+debug(parse_name)
+system.time(
+ContribsEditedTibbleSamp <-
+  ContribsEdited %>%
+    #dplyr::slice_head(n=1000) %>%
+    mutate(given = parse_name(Given_Name))
+)
+
+
 ContribsEditedTibble = ContribsEdited %>% mutate(given = Given_Name %>% sapply(parse_name))
 
 test = opengender::add_category_predictions(ContribsEditedTibble[1,],  dicts = c("rosenmanGiven"), col_map = c(input_key = "given"))
