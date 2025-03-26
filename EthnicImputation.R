@@ -1,4 +1,4 @@
-# Open Gender Imputation
+# Ethnic Imputation
 library(tidyverse)
 library(xml2)
 library(docstring)
@@ -30,6 +30,7 @@ parse_name <- function(name){
 
   cleaned_text <-
     name %>%
+    trimws()%>%
     stringr::str_remove_all("\\(.+?\\)|[.]" ) %>%
     stringr::str_to_title(locale = "en") %>%
     stringr::str_split(" ")
@@ -90,22 +91,22 @@ ReviewersWithImputation = Reviewers %>% bind_cols(ReviewersImputation)
 # saveRDS(ReviewersWithImputation, file = "./Data(rds files)/ReviewersWithCatImputation.rds")
 
 
-Contribs = ImportedData %>% unnest(data)
+# Contribs = ImportedData %>% unnest(data)
 #ContribsEdited = Contribs[,"Given Name"] %>% rename(Given_Name = "Given Name") %>% ungroup()
 
 ContribsEdited <- Contribs %>% ungroup() %>% dplyr::select(Given_Name = `Given Name`)
 
 # library(parallel)
-debug(parse_name)
+# debug(parse_name)
 system.time(
 ContribsEditedTibbleSamp <-
   ContribsEdited %>%
-    #dplyr::slice_head(n=1000) %>%
+    dplyr::slice_head(n=1000) %>%
     mutate(given = parse_name(Given_Name))
 )
 
 
-ContribsEditedTibble = ContribsEdited %>% mutate(given = Given_Name %>% sapply(parse_name))
+ContribsEditedTibble = ContribsEdited %>% mutate(given = parse_name(Given_Name))
 
 test = opengender::add_category_predictions(ContribsEditedTibble[1,],  dicts = c("rosenmanGiven"), col_map = c(input_key = "given"))
 ContribImputation = split_and_rejoin_imputation(ContribsEditedTibble)
