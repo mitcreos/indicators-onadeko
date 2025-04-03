@@ -194,15 +194,13 @@ for (journal in journal_codes) {
 
 
 # roles_tibble = ContImput %>% unnest(Role)
-#
 # role_gender_avg <- roles_tibble %>% group_by(.[[11]]) %>%
 #   summarise(Average_Gender_Score = mean(og_pr_F, na.rm = TRUE), .groups = "drop")
-#
-# saveRDS(role_gender_avg, "./Data(rds files)/role_by_genderall.rds")
+# saveRDS(role_gender_avg, "./Data(rds files)/RolesByGender/roles_by_gender_all.rds")
 
 for (journal in journal_codes) {
   # Filter datasets for the current journal
-  filename = paste("./Data(rds files)/role_by_genderall_",journal,".rds",sep = '')
+  filename = paste("./Data(rds files)/RolesByGender/roles_by_gender_",journal,".rds",sep = '')
   journal_cont <- ContImput %>% filter(Journal_Code == journal)
   roles_tibble = journal_cont %>% unnest(Role)
   role_gender_avg <- roles_tibble %>% group_by(.[[11]]) %>%
